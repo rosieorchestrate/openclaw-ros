@@ -1,0 +1,16 @@
+package.xml
+setup.cfg
+setup.py
+launch/simulation.launch.py
+resource/turtle_talker
+turtle_talker/__init__.py
+turtle_talker/listener.py
+turtle_talker/py.typed
+turtle_talker/talker.py
+turtle_talker.egg-info/PKG-INFO
+turtle_talker.egg-info/SOURCES.txt
+turtle_talker.egg-info/dependency_links.txt
+turtle_talker.egg-info/entry_points.txt
+turtle_talker.egg-info/requires.txt
+turtle_talker.egg-info/top_level.txt
+turtle_talker.egg-info/zip-safe

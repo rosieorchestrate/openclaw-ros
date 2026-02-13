@@ -1,0 +1,23 @@
+running develop
+running egg_info
+creating turtle_talker.egg-info
+writing turtle_talker.egg-info/PKG-INFO
+writing dependency_links to turtle_talker.egg-info/dependency_links.txt
+writing entry points to turtle_talker.egg-info/entry_points.txt
+writing requirements to turtle_talker.egg-info/requires.txt
+writing top-level names to turtle_talker.egg-info/top_level.txt
+writing manifest file 'turtle_talker.egg-info/SOURCES.txt'
+reading manifest file 'turtle_talker.egg-info/SOURCES.txt'
+writing manifest file 'turtle_talker.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/opencw/.openclaw/openclaw-ros/projects/02_turtle_talker/src/turtle_talker/install/turtle_talker/lib/python3.12/site-packages/turtle-talker.egg-link (link to .)
+Installing listener script to /home/opencw/.openclaw/openclaw-ros/projects/02_turtle_talker/src/turtle_talker/install/turtle_talker/lib/turtle_talker
+Installing talker script to /home/opencw/.openclaw/openclaw-ros/projects/02_turtle_talker/src/turtle_talker/install/turtle_talker/lib/turtle_talker
+
+Installed /home/opencw/.openclaw/openclaw-ros/projects/02_turtle_talker/src/turtle_talker/build/turtle_talker
+running symlink_data
+creating /home/opencw/.openclaw/openclaw-ros/projects/02_turtle_talker/src/turtle_talker/install/turtle_talker/share/ament_index
+creating /home/opencw/.openclaw/openclaw-ros/projects/02_turtle_talker/src/turtle_talker/install/turtle_talker/share/ament_index/resource_index
+creating /home/opencw/.openclaw/openclaw-ros/projects/02_turtle_talker/src/turtle_talker/install/turtle_talker/share/ament_index/resource_index/packages
+symbolically linking /home/opencw/.openclaw/openclaw-ros/projects/02_turtle_talker/src/turtle_talker/build/turtle_talker/resource/turtle_talker -> /home/opencw/.openclaw/openclaw-ros/projects/02_turtle_talker/src/turtle_talker/install/turtle_talker/share/ament_index/resource_index/packages
+symbolically linking /home/opencw/.openclaw/openclaw-ros/projects/02_turtle_talker/src/turtle_talker/build/turtle_talker/package.xml -> /home/opencw/.openclaw/openclaw-ros/projects/02_turtle_talker/src/turtle_talker/install/turtle_talker/share/turtle_talker

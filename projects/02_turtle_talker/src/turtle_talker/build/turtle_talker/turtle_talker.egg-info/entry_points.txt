@@ -1,0 +1,3 @@
+[console_scripts]
+listener = turtle_talker.listener:main
+talker = turtle_talker.talker:main
