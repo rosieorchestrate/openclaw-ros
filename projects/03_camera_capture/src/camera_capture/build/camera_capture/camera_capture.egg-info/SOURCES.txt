@@ -1,0 +1,16 @@
+package.xml
+setup.cfg
+setup.py
+camera_capture/__init__.py
+camera_capture/image_saver.py
+camera_capture/py.typed
+camera_capture/virtual_camera.py
+camera_capture.egg-info/PKG-INFO
+camera_capture.egg-info/SOURCES.txt
+camera_capture.egg-info/dependency_links.txt
+camera_capture.egg-info/entry_points.txt
+camera_capture.egg-info/requires.txt
+camera_capture.egg-info/top_level.txt
+camera_capture.egg-info/zip-safe
+launch/simulation.launch.py
+resource/camera_capture

@@ -1,0 +1,3 @@
+[console_scripts]
+image_saver = camera_capture.image_saver:main
+virtual_camera = camera_capture.virtual_camera:main

@@ -1,0 +1,25 @@
+running develop
+running egg_info
+creating camera_capture.egg-info
+writing camera_capture.egg-info/PKG-INFO
+writing dependency_links to camera_capture.egg-info/dependency_links.txt
+writing entry points to camera_capture.egg-info/entry_points.txt
+writing requirements to camera_capture.egg-info/requires.txt
+writing top-level names to camera_capture.egg-info/top_level.txt
+writing manifest file 'camera_capture.egg-info/SOURCES.txt'
+reading manifest file 'camera_capture.egg-info/SOURCES.txt'
+writing manifest file 'camera_capture.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/install/camera_capture/lib/python3.12/site-packages/camera-capture.egg-link (link to .)
+Installing image_saver script to /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/install/camera_capture/lib/camera_capture
+Installing virtual_camera script to /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/install/camera_capture/lib/camera_capture
+
+Installed /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/build/camera_capture
+running symlink_data
+creating /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/install/camera_capture/share/ament_index
+creating /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/install/camera_capture/share/ament_index/resource_index
+creating /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/install/camera_capture/share/ament_index/resource_index/packages
+symbolically linking /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/build/camera_capture/resource/camera_capture -> /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/install/camera_capture/share/ament_index/resource_index/packages
+symbolically linking /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/build/camera_capture/package.xml -> /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/install/camera_capture/share/camera_capture
+creating /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/install/camera_capture/share/camera_capture/launch
+symbolically linking /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/build/camera_capture/launch/simulation.launch.py -> /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/install/camera_capture/share/camera_capture/launch

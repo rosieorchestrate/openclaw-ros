@@ -1,0 +1,27 @@
+[3.279s] Invoking command in '/home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/build/camera_capture': PYTHONPATH=/home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/build/camera_capture/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/install/camera_capture/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/build/camera_capture/build --no-deps symlink_data
+[4.602s] running develop
+[5.398s] running egg_info
+[5.398s] creating camera_capture.egg-info
+[5.468s] writing camera_capture.egg-info/PKG-INFO
+[5.469s] writing dependency_links to camera_capture.egg-info/dependency_links.txt
+[5.470s] writing entry points to camera_capture.egg-info/entry_points.txt
+[5.470s] writing requirements to camera_capture.egg-info/requires.txt
+[5.471s] writing top-level names to camera_capture.egg-info/top_level.txt
+[5.472s] writing manifest file 'camera_capture.egg-info/SOURCES.txt'
+[5.617s] reading manifest file 'camera_capture.egg-info/SOURCES.txt'
+[5.619s] writing manifest file 'camera_capture.egg-info/SOURCES.txt'
+[5.696s] running build_ext
+[5.697s] Creating /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/install/camera_capture/lib/python3.12/site-packages/camera-capture.egg-link (link to .)
+[5.700s] Installing image_saver script to /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/install/camera_capture/lib/camera_capture
+[5.701s] Installing virtual_camera script to /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/install/camera_capture/lib/camera_capture
+[5.702s] 
+[5.703s] Installed /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/build/camera_capture
+[5.703s] running symlink_data
+[5.704s] creating /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/install/camera_capture/share/ament_index
+[5.704s] creating /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/install/camera_capture/share/ament_index/resource_index
+[5.705s] creating /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/install/camera_capture/share/ament_index/resource_index/packages
+[5.706s] symbolically linking /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/build/camera_capture/resource/camera_capture -> /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/install/camera_capture/share/ament_index/resource_index/packages
+[5.706s] symbolically linking /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/build/camera_capture/package.xml -> /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/install/camera_capture/share/camera_capture
+[5.708s] creating /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/install/camera_capture/share/camera_capture/launch
+[5.709s] symbolically linking /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/build/camera_capture/launch/simulation.launch.py -> /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/install/camera_capture/share/camera_capture/launch
+[5.862s] Invoked command in '/home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/build/camera_capture' returned '0': PYTHONPATH=/home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/build/camera_capture/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/install/camera_capture/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/build/camera_capture/build --no-deps symlink_data

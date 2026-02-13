@@ -1,0 +1,1 @@
+/home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/launch/simulation.launch.py
