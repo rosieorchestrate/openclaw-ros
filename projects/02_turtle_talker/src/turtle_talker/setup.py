@@ -25,6 +25,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'talker = turtle_talker.talker:main',
+            'listener = turtle_talker.listener:main',
         ],
     },
 )
