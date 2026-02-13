@@ -1,0 +1,4 @@
+[console_scripts]
+listener = blink_talker.listener:main
+talker = blink_talker.talker:main
+terminal_listener = blink_talker.terminal_listener:main

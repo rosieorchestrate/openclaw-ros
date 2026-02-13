@@ -1,0 +1,25 @@
+[18.372s] Invoking command in '/home/opencw/.openclaw/workspace/Projects/blink_talker/build/blink_talker': PYTHONPATH=/home/opencw/.openclaw/workspace/Projects/blink_talker/build/blink_talker/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/opencw/.openclaw/workspace/Projects/blink_talker/install/blink_talker/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/opencw/.openclaw/workspace/Projects/blink_talker/build/blink_talker/build --no-deps symlink_data
+[23.013s] running develop
+[27.690s] running egg_info
+[27.692s] creating blink_talker.egg-info
+[28.415s] writing blink_talker.egg-info/PKG-INFO
+[28.428s] writing dependency_links to blink_talker.egg-info/dependency_links.txt
+[28.442s] writing entry points to blink_talker.egg-info/entry_points.txt
+[28.444s] writing requirements to blink_talker.egg-info/requires.txt
+[28.444s] writing top-level names to blink_talker.egg-info/top_level.txt
+[28.455s] writing manifest file 'blink_talker.egg-info/SOURCES.txt'
+[29.402s] reading manifest file 'blink_talker.egg-info/SOURCES.txt'
+[29.412s] writing manifest file 'blink_talker.egg-info/SOURCES.txt'
+[29.869s] running build_ext
+[29.870s] Creating /home/opencw/.openclaw/workspace/Projects/blink_talker/install/blink_talker/lib/python3.12/site-packages/blink-talker.egg-link (link to .)
+[29.891s] Installing listener script to /home/opencw/.openclaw/workspace/Projects/blink_talker/install/blink_talker/bin
+[29.892s] Installing talker script to /home/opencw/.openclaw/workspace/Projects/blink_talker/install/blink_talker/bin
+[29.902s] 
+[29.903s] Installed /home/opencw/.openclaw/workspace/Projects/blink_talker/build/blink_talker
+[29.907s] running symlink_data
+[29.908s] creating /home/opencw/.openclaw/workspace/Projects/blink_talker/install/blink_talker/share/ament_index
+[29.915s] creating /home/opencw/.openclaw/workspace/Projects/blink_talker/install/blink_talker/share/ament_index/resource_index
+[29.917s] creating /home/opencw/.openclaw/workspace/Projects/blink_talker/install/blink_talker/share/ament_index/resource_index/packages
+[29.918s] symbolically linking /home/opencw/.openclaw/workspace/Projects/blink_talker/build/blink_talker/resource/blink_talker -> /home/opencw/.openclaw/workspace/Projects/blink_talker/install/blink_talker/share/ament_index/resource_index/packages
+[29.926s] symbolically linking /home/opencw/.openclaw/workspace/Projects/blink_talker/build/blink_talker/package.xml -> /home/opencw/.openclaw/workspace/Projects/blink_talker/install/blink_talker/share/blink_talker
+[30.454s] Invoked command in '/home/opencw/.openclaw/workspace/Projects/blink_talker/build/blink_talker' returned '0': PYTHONPATH=/home/opencw/.openclaw/workspace/Projects/blink_talker/build/blink_talker/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/opencw/.openclaw/workspace/Projects/blink_talker/install/blink_talker/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/opencw/.openclaw/workspace/Projects/blink_talker/build/blink_talker/build --no-deps symlink_data

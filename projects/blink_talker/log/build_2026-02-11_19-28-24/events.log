@@ -1,0 +1,92 @@
+[0.000000] (-) TimerEvent: {}
+[0.000984] (blink_talker) JobQueued: {'identifier': 'blink_talker', 'dependencies': OrderedDict()}
+[0.002318] (blink_talker) JobStarted: {'identifier': 'blink_talker'}
+[0.099245] (-) TimerEvent: {}
+[0.199585] (-) TimerEvent: {}
+[0.299950] (-) TimerEvent: {}
+[0.400382] (-) TimerEvent: {}
+[0.500889] (-) TimerEvent: {}
+[0.601285] (-) TimerEvent: {}
+[0.701627] (-) TimerEvent: {}
+[0.801967] (-) TimerEvent: {}
+[0.902342] (-) TimerEvent: {}
+[1.002764] (-) TimerEvent: {}
+[1.103273] (-) TimerEvent: {}
+[1.203674] (-) TimerEvent: {}
+[1.304091] (-) TimerEvent: {}
+[1.404743] (-) TimerEvent: {}
+[1.505904] (-) TimerEvent: {}
+[1.606414] (-) TimerEvent: {}
+[1.706925] (-) TimerEvent: {}
+[1.807393] (-) TimerEvent: {}
+[1.907885] (-) TimerEvent: {}
+[2.008436] (-) TimerEvent: {}
+[2.138923] (-) TimerEvent: {}
+[2.239274] (-) TimerEvent: {}
+[2.339641] (-) TimerEvent: {}
+[2.440031] (-) TimerEvent: {}
+[2.540475] (-) TimerEvent: {}
+[2.640933] (-) TimerEvent: {}
+[2.741303] (-) TimerEvent: {}
+[2.841712] (-) TimerEvent: {}
+[2.942232] (-) TimerEvent: {}
+[3.042670] (-) TimerEvent: {}
+[3.143044] (-) TimerEvent: {}
+[3.243476] (-) TimerEvent: {}
+[3.343914] (-) TimerEvent: {}
+[3.444239] (-) TimerEvent: {}
+[3.544548] (-) TimerEvent: {}
+[3.644920] (-) TimerEvent: {}
+[3.745236] (-) TimerEvent: {}
+[3.845543] (-) TimerEvent: {}
+[3.945915] (-) TimerEvent: {}
+[4.046342] (-) TimerEvent: {}
+[4.146906] (-) TimerEvent: {}
+[4.229267] (blink_talker) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/opencw/.openclaw/workspace/Projects/blink_talker/build/blink_talker/build', '--no-deps', 'symlink_data'], 'cwd': '/home/opencw/.openclaw/workspace/Projects/blink_talker/build/blink_talker', 'env': {'USER': 'opencw', 'OPENCLAW_SYSTEMD_UNIT': 'openclaw-gateway.service', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/opt/ros/kilted/lib/aarch64-linux-gnu:/opt/ros/kilted/lib', 'HOME': '/home/opencw', 'OPENCLAW_GATEWAY_TOKEN': '7ea1fb367e0e502879fcb10db1a1366b776651c7d921334b', 'OLDPWD': '/home/opencw/.openclaw/workspace', 'GTK_MODULES': 'gail:atk-bridge', 'ROS_PYTHON_VERSION': '3', 'MANAGERPID': '1630', 'NODE_NO_WARNINGS': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'SYSTEMD_EXEC_PID': '1745', 'OPENCLAW_SERVICE_VERSION': '2026.2.9', 'ROS_DISTRO': 'kilted', 'COLCON_PREFIX_PATH': '/home/opencw/.openclaw/workspace/Projects/blink_talker/install', 'LOGNAME': 'opencw', 'JOURNAL_STREAM': '8:16051', '_': '/usr/bin/colcon', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openclaw-gateway.service/memory.pressure', 'ROS_VERSION': '2', 'PATH': '/home/opencw/.openclaw/workspace/Projects/blink_talker/install/blink_talker/bin:/opt/ros/kilted/bin:/usr/local/bin:/usr/bin:/bin:/home/opencw/.local/bin:/home/opencw/.npm-global/bin:/home/opencw/bin:/home/opencw/.nvm/current/bin:/home/opencw/.fnm/current/bin:/home/opencw/.volta/bin:/home/opencw/.asdf/shims:/home/opencw/.local/share/pnpm:/home/opencw/.bun/bin', 'INVOCATION_ID': '276837792be64418b2459cfde4a46129', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'C.UTF-8', 'OPENCLAW_GATEWAY_PORT': '18789', 'SSH_AUTH_SOCK': '/run/user/1000/gnupg/S.gpg-agent.ssh', 'AMENT_PREFIX_PATH': '/home/opencw/.openclaw/workspace/Projects/blink_talker/install/blink_talker:/opt/ros/kilted', 'SHELL': '/usr/bin/zsh', 'QT_ACCESSIBILITY': '1', 'OPENCLAW_SERVICE_MARKER': 'openclaw', 'OPENCLAW_SERVICE_KIND': 'gateway', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/opencw/.openclaw/workspace/Projects/blink_talker/build/blink_talker', 'XDG_DATA_DIRS': '/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/opencw/.openclaw/workspace/Projects/blink_talker/build/blink_talker/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/opencw/.openclaw/workspace/Projects/blink_talker/install/blink_talker/lib/python3.12/site-packages:/home/opencw/.openclaw/workspace/Projects/blink_talker/build/blink_talker:/home/opencw/.openclaw/workspace/Projects/blink_talker/install/blink_talker/lib/python3.12/site-packages:/opt/ros/kilted/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'OPENCLAW_PATH_BOOTSTRAPPED': '1'}, 'shell': False}
+[4.247042] (-) TimerEvent: {}
+[4.347405] (-) TimerEvent: {}
+[4.447742] (-) TimerEvent: {}
+[4.548116] (-) TimerEvent: {}
+[4.648452] (-) TimerEvent: {}
+[4.748807] (-) TimerEvent: {}
+[4.849174] (-) TimerEvent: {}
+[4.949500] (-) TimerEvent: {}
+[5.049907] (-) TimerEvent: {}
+[5.150284] (-) TimerEvent: {}
+[5.250608] (-) TimerEvent: {}
+[5.350954] (-) TimerEvent: {}
+[5.451292] (-) TimerEvent: {}
+[5.551606] (-) TimerEvent: {}
+[5.572470] (blink_talker) StdoutLine: {'line': b'running develop\n'}
+[5.651766] (-) TimerEvent: {}
+[5.752105] (-) TimerEvent: {}
+[5.852501] (-) TimerEvent: {}
+[5.952931] (-) TimerEvent: {}
+[6.053252] (-) TimerEvent: {}
+[6.153557] (-) TimerEvent: {}
+[6.253897] (-) TimerEvent: {}
+[6.354208] (-) TimerEvent: {}
+[6.375104] (blink_talker) StdoutLine: {'line': b'running egg_info\n'}
+[6.441089] (blink_talker) StdoutLine: {'line': b'writing blink_talker.egg-info/PKG-INFO\n'}
+[6.442235] (blink_talker) StdoutLine: {'line': b'writing dependency_links to blink_talker.egg-info/dependency_links.txt\n'}
+[6.449049] (blink_talker) StdoutLine: {'line': b'writing entry points to blink_talker.egg-info/entry_points.txt\n'}
+[6.449953] (blink_talker) StdoutLine: {'line': b'writing requirements to blink_talker.egg-info/requires.txt\n'}
+[6.451022] (blink_talker) StdoutLine: {'line': b'writing top-level names to blink_talker.egg-info/top_level.txt\n'}
+[6.454368] (-) TimerEvent: {}
+[6.554670] (-) TimerEvent: {}
+[6.594236] (blink_talker) StdoutLine: {'line': b"reading manifest file 'blink_talker.egg-info/SOURCES.txt'\n"}
+[6.597327] (blink_talker) StdoutLine: {'line': b"writing manifest file 'blink_talker.egg-info/SOURCES.txt'\n"}
+[6.654870] (-) TimerEvent: {}
+[6.671962] (blink_talker) StdoutLine: {'line': b'running build_ext\n'}
+[6.672708] (blink_talker) StdoutLine: {'line': b'Creating /home/opencw/.openclaw/workspace/Projects/blink_talker/install/blink_talker/lib/python3.12/site-packages/blink-talker.egg-link (link to .)\n'}
+[6.675346] (blink_talker) StdoutLine: {'line': b'Installing listener script to /home/opencw/.openclaw/workspace/Projects/blink_talker/install/blink_talker/bin\n'}
+[6.676466] (blink_talker) StdoutLine: {'line': b'Installing talker script to /home/opencw/.openclaw/workspace/Projects/blink_talker/install/blink_talker/bin\n'}
+[6.677448] (blink_talker) StdoutLine: {'line': b'Installing terminal_listener script to /home/opencw/.openclaw/workspace/Projects/blink_talker/install/blink_talker/bin\n'}
+[6.678662] (blink_talker) StdoutLine: {'line': b'\n'}
+[6.679223] (blink_talker) StdoutLine: {'line': b'Installed /home/opencw/.openclaw/workspace/Projects/blink_talker/build/blink_talker\n'}
+[6.679917] (blink_talker) StdoutLine: {'line': b'running symlink_data\n'}
+[6.755104] (-) TimerEvent: {}
+[6.841628] (blink_talker) CommandEnded: {'returncode': 0}
+[6.855294] (-) TimerEvent: {}
+[6.947278] (blink_talker) JobEnded: {'identifier': 'blink_talker', 'rc': 0}
+[6.950349] (-) EventReactorShutdown: {}

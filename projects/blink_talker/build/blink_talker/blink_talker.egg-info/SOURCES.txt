@@ -1,0 +1,14 @@
+package.xml
+setup.py
+blink_talker/__init__.py
+blink_talker/listener.py
+blink_talker/talker.py
+blink_talker/terminal_listener.py
+blink_talker.egg-info/PKG-INFO
+blink_talker.egg-info/SOURCES.txt
+blink_talker.egg-info/dependency_links.txt
+blink_talker.egg-info/entry_points.txt
+blink_talker.egg-info/requires.txt
+blink_talker.egg-info/top_level.txt
+blink_talker.egg-info/zip-safe
+resource/blink_talker
