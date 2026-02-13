@@ -10,6 +10,8 @@ Prevent drift between simulation and real deployment. All components must respec
 | /detected/laptop | std_msgs/Bool | decision | led | derived signal |
 | /led/cmd | std_msgs/Bool | decision | led_hw/sim | desired state |
 | /turtle_chatter | std_msgs/String | random_talker | terminal_listener | Randomly timed hello messages |
+| /camera/image_raw | sensor_msgs/Image | camera_ros | image_saver | raw camera frames (best effort) |
+| /capture_request | std_msgs/Empty | user/telegram | image_saver | trigger to save current frame |
 
 ## Services / Actions
 Document here when added.
