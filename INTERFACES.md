@@ -1,0 +1,30 @@
+# Interface Contract (ROS Graph)
+## Purpose
+Prevent drift between simulation and real deployment. All components must respect these interfaces.
+
+## Topics
+| Name | Type | Publisher | Subscriber | Notes |
+|------|------|-----------|------------|-------|
+| /camera/image_raw | sensor_msgs/Image | camera | detector | best effort |
+| /detections | vision_msgs/Detection2DArray | detector | decision | |
+| /detected/laptop | std_msgs/Bool | decision | led | derived signal |
+| /led/cmd | std_msgs/Bool | decision | led_hw/sim | desired state |
+
+## Services / Actions
+Document here when added.
+
+## Parameters Per Node
+Each node must document:
+- parameter name
+- type
+- default
+- effect
+
+## Frames (if used)
+Define canonical frames and ownership.
+
+## Change Rule
+Any interface change requires:
+1. update to this file
+2. update to simulation if affected
+3. update to verification scripts
