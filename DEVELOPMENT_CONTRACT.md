@@ -1,33 +1,35 @@
-# Repository Contract
+# Development Practice Contract
+
 ## Purpose
-Define where artifacts live so the agent can reliably create, modify and verify a ROS2 workspace.
+Guide incremental, reviewable, safe progress.
 
-## Top Level Layout (mandatory)
-- README.md
-- docs/
-- PLAN.md
-- STATUS.md
-- DECISIONS.md
-- INTERFACES.md
-- OBSERVABILITY_CONTRACT.md
-- DEVELOPMENT_CONTRACT.md
-- SIMULATION_CONTRACT.md
-- VERIFICATION_CONTRACT.md
-- src/
-- config/
-- scripts/
+## Work Unit Definition
+One work unit:
+- implements one small change
+- satisfies one acceptance criterion
 
-## Rules
-- All ROS2 code must live inside src/ in proper packages.
-- Runtime parameters must live in config/.
-- Helper or CI scripts must live in scripts/.
-- Documentation updates are required when behavior changes.
+## Required After Each Work Unit
+- build succeeds
+- smoke or acceptance test passes
+- `STATUS.md` updated
 
-## Entry Points
-Each milestone must define at least one canonical: `ros2 launch <pkg> <file>.launch.py`. This command must be documented in README.md.
+## STATUS.md Entry Template
+### <date>
+- **Change**: [brief description]
+- **Verification**: [how you know it works]
+- **Next step**: [what's next]
+- **Open questions**: [anything unclear?]
 
-## Agent Checklist Before Coding
-- Does the required package already exist?
-- If not, create via `ros2 pkg create`.
-- Are config and launch files placed correctly?
-- Update PLAN if structure changes.
+## Git Rules
+Commit message: `milestone(<id>): <summary> (verified: <method>)`
+No large multi-feature commits.
+
+## Mandatory User Check-In
+Required if:
+- hardware access changes
+- system configuration changes
+- new major dependency
+- repeated failure to pass verification
+
+## Context Discipline
+Agent should prefer: small patches → verify → commit.
