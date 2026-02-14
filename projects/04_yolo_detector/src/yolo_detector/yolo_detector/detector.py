@@ -19,11 +19,13 @@ class YoloDetector(Node):
         self.declare_parameter('config_path', 'config/models/yolo.cfg')
         self.declare_parameter('classes_path', 'config/models/coco.names')
         self.declare_parameter('confidence_threshold', 0.5)
+        self.declare_parameter('save_debug_images', False) # New Flag
         
         # Load YOLO
         weights = self.get_parameter('model_path').value
         config = self.get_parameter('config_path').value
         classes = self.get_parameter('classes_path').value
+        self.debug_mode = self.get_parameter('save_debug_images').value
         
         self.net = cv2.dnn.readNet(weights, config)
         with open(classes, 'r') as f:
@@ -33,15 +35,19 @@ class YoloDetector(Node):
         self.output_layers = [layer_names[i - 1] for i in self.net.getUnconnectedOutLayers()]
 
         # Publishers / Subscribers
-        # Simulation Level 2: Strict parity with physical best-effort camera
         self.subscription = self.create_subscription(
             Image, '/camera/image_raw', self.image_callback, qos_profile_sensor_data)
         self.publisher = self.create_publisher(Detection2DArray, '/detections', 10)
+        
+        # Conditional Debug Publisher
+        self.debug_pub = None
+        if self.debug_mode:
+            self.debug_pub = self.create_publisher(Image, '/detections/visual_debug', 10)
 
-        # 1Hz Timer for Inference (Process one frame per second as per guidelines)
+        # 1Hz Timer for Inference
         self.timer = self.create_timer(1.0, self.timer_callback)
 
-        self.get_logger().info('node=yolo_detector event=startup status=ok model=yolov4-tiny rate=1Hz')
+        self.get_logger().info(f'node=yolo_detector event=startup status=ok debug={self.debug_mode}')
 
     def image_callback(self, msg):
         self.latest_msg = msg
@@ -52,14 +58,12 @@ class YoloDetector(Node):
 
         try:
             cv_image = self.bridge.imgmsg_to_cv2(self.latest_msg, desired_encoding='bgr8')
-            height, width, _ = cv_image.shape
-
+            
             # Inference
             blob = cv2.dnn.blobFromImage(cv_image, 0.00392, (416, 416), (0, 0, 0), True, crop=False)
             self.net.setInput(blob)
             outs = self.net.forward(self.output_layers)
 
-            # Parse results
             detections = Detection2DArray()
             detections.header = self.latest_msg.header
             
@@ -75,8 +79,17 @@ class YoloDetector(Node):
                         hyp.hypothesis.score = float(confidence)
                         det.results.append(hyp)
                         detections.detections.append(det)
+                        
+                        if self.debug_mode:
+                            label = f"{self.classes[class_id]}: {confidence:.2f}"
+                            cv2.putText(cv_image, label, (10, 30 + (20 * len(detections.detections))), 
+                                        cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
 
             self.publisher.publish(detections)
+            
+            if self.debug_mode and self.debug_pub:
+                self.debug_pub.publish(self.bridge.cv2_to_imgmsg(cv_image, encoding="bgr8"))
+                
             self.get_logger().info(f'event=inference_complete detections={len(detections.detections)}')
 
         except Exception as e:
