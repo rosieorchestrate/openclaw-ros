@@ -1,0 +1,18 @@
+[3.191s] Invoking command in '/home/opencw/.openclaw/openclaw-ros/projects/04_yolo_detector/src/yolo_detector/build/yolo_detector': PYTHONPATH=/home/opencw/.openclaw/openclaw-ros/projects/04_yolo_detector/src/yolo_detector/build/yolo_detector/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/opencw/.openclaw/openclaw-ros/projects/04_yolo_detector/src/yolo_detector/install/yolo_detector/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/opencw/.openclaw/openclaw-ros/projects/04_yolo_detector/src/yolo_detector/build/yolo_detector/build --no-deps symlink_data
+[4.467s] running develop
+[5.256s] running egg_info
+[5.322s] writing yolo_detector.egg-info/PKG-INFO
+[5.323s] writing dependency_links to yolo_detector.egg-info/dependency_links.txt
+[5.330s] writing entry points to yolo_detector.egg-info/entry_points.txt
+[5.331s] writing requirements to yolo_detector.egg-info/requires.txt
+[5.332s] writing top-level names to yolo_detector.egg-info/top_level.txt
+[5.477s] reading manifest file 'yolo_detector.egg-info/SOURCES.txt'
+[5.480s] writing manifest file 'yolo_detector.egg-info/SOURCES.txt'
+[5.554s] running build_ext
+[5.555s] Creating /home/opencw/.openclaw/openclaw-ros/projects/04_yolo_detector/src/yolo_detector/install/yolo_detector/lib/python3.12/site-packages/yolo-detector.egg-link (link to .)
+[5.557s] Installing detector script to /home/opencw/.openclaw/openclaw-ros/projects/04_yolo_detector/src/yolo_detector/install/yolo_detector/lib/yolo_detector
+[5.559s] Installing logger script to /home/opencw/.openclaw/openclaw-ros/projects/04_yolo_detector/src/yolo_detector/install/yolo_detector/lib/yolo_detector
+[5.560s] 
+[5.561s] Installed /home/opencw/.openclaw/openclaw-ros/projects/04_yolo_detector/src/yolo_detector/build/yolo_detector
+[5.561s] running symlink_data
+[5.710s] Invoked command in '/home/opencw/.openclaw/openclaw-ros/projects/04_yolo_detector/src/yolo_detector/build/yolo_detector' returned '0': PYTHONPATH=/home/opencw/.openclaw/openclaw-ros/projects/04_yolo_detector/src/yolo_detector/build/yolo_detector/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/opencw/.openclaw/openclaw-ros/projects/04_yolo_detector/src/yolo_detector/install/yolo_detector/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/opencw/.openclaw/openclaw-ros/projects/04_yolo_detector/src/yolo_detector/build/yolo_detector/build --no-deps symlink_data
