@@ -12,6 +12,7 @@ Prevent drift between simulation and real deployment. All components must respec
 | /turtle_chatter | std_msgs/String | random_talker | terminal_listener | Randomly timed hello messages |
 | /camera/image_raw | sensor_msgs/Image | camera_ros | image_saver | raw camera frames (best effort) |
 | /capture_request | std_msgs/Empty | user/telegram | image_saver | trigger to save current frame |
+| /detections | vision_msgs/Detection2DArray | yolo_detector | logger | Object detection results |
 
 ## Services / Actions
 Document here when added.
