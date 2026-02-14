@@ -1,0 +1,3 @@
+[console_scripts]
+detector = yolo_detector.detector:main
+logger = yolo_detector.logger:main

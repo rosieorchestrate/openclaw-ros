@@ -1,0 +1,1 @@
+/home/opencw/.openclaw/openclaw-ros/projects/04_yolo_detector/src/yolo_detector/setup.py

@@ -1,0 +1,81 @@
+[0.000000] (-) TimerEvent: {}
+[0.000701] (yolo_detector) JobQueued: {'identifier': 'yolo_detector', 'dependencies': OrderedDict()}
+[0.001439] (yolo_detector) JobStarted: {'identifier': 'yolo_detector'}
+[0.095360] (-) TimerEvent: {}
+[0.195684] (-) TimerEvent: {}
+[0.295985] (-) TimerEvent: {}
+[0.396281] (-) TimerEvent: {}
+[0.496623] (-) TimerEvent: {}
+[0.596937] (-) TimerEvent: {}
+[0.697217] (-) TimerEvent: {}
+[0.797514] (-) TimerEvent: {}
+[0.897898] (-) TimerEvent: {}
+[0.998251] (-) TimerEvent: {}
+[1.098623] (-) TimerEvent: {}
+[1.198942] (-) TimerEvent: {}
+[1.299243] (-) TimerEvent: {}
+[1.399514] (-) TimerEvent: {}
+[1.499833] (-) TimerEvent: {}
+[1.600111] (-) TimerEvent: {}
+[1.700405] (-) TimerEvent: {}
+[1.800695] (-) TimerEvent: {}
+[1.900973] (-) TimerEvent: {}
+[2.001274] (-) TimerEvent: {}
+[2.101597] (-) TimerEvent: {}
+[2.201899] (-) TimerEvent: {}
+[2.302226] (-) TimerEvent: {}
+[2.402524] (-) TimerEvent: {}
+[2.502856] (-) TimerEvent: {}
+[2.603147] (-) TimerEvent: {}
+[2.703431] (-) TimerEvent: {}
+[2.803763] (-) TimerEvent: {}
+[2.904065] (-) TimerEvent: {}
+[3.004358] (-) TimerEvent: {}
+[3.104760] (-) TimerEvent: {}
+[3.205229] (-) TimerEvent: {}
+[3.248032] (yolo_detector) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/opencw/.openclaw/openclaw-ros/projects/04_yolo_detector/src/yolo_detector/build/yolo_detector/build', '--no-deps', 'symlink_data'], 'cwd': '/home/opencw/.openclaw/openclaw-ros/projects/04_yolo_detector/src/yolo_detector/build/yolo_detector', 'env': {'USER': 'opencw', 'OPENCLAW_SYSTEMD_UNIT': 'openclaw-gateway.service', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/kilted/lib/aarch64-linux-gnu:/opt/ros/kilted/lib', 'HOME': '/home/opencw', 'OPENCLAW_GATEWAY_TOKEN': '7ea1fb367e0e502879fcb10db1a1366b776651c7d921334b', 'OLDPWD': '/home/opencw/.openclaw/openclaw-ros/projects/04_yolo_detector/src/yolo_detector', 'GTK_MODULES': 'gail:atk-bridge', 'ROS_PYTHON_VERSION': '3', 'MANAGERPID': '1557', 'NODE_NO_WARNINGS': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'SYSTEMD_EXEC_PID': '1715', 'OPENCLAW_SERVICE_VERSION': '2026.2.9', 'ROS_DISTRO': 'kilted', 'COLCON_PREFIX_PATH': '/home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/install', 'LOGNAME': 'opencw', 'JOURNAL_STREAM': '8:13286', '_': '/usr/bin/colcon', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openclaw-gateway.service/memory.pressure', 'ROS_VERSION': '2', 'PATH': '/opt/ros/kilted/bin:/usr/local/bin:/usr/bin:/bin:/home/opencw/.local/bin:/home/opencw/.npm-global/bin:/home/opencw/bin:/home/opencw/.nvm/current/bin:/home/opencw/.fnm/current/bin:/home/opencw/.volta/bin:/home/opencw/.asdf/shims:/home/opencw/.local/share/pnpm:/home/opencw/.bun/bin', 'INVOCATION_ID': '89548135506b4d389a62b80abe3a3da2', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'C.UTF-8', 'OPENCLAW_GATEWAY_PORT': '18789', 'SSH_AUTH_SOCK': '/run/user/1000/gnupg/S.gpg-agent.ssh', 'AMENT_PREFIX_PATH': '/home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/install/camera_capture:/opt/ros/kilted', 'SHELL': '/usr/bin/zsh', 'QT_ACCESSIBILITY': '1', 'OPENCLAW_SERVICE_MARKER': 'openclaw', 'OPENCLAW_SERVICE_KIND': 'gateway', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/opencw/.openclaw/openclaw-ros/projects/04_yolo_detector/src/yolo_detector/build/yolo_detector', 'XDG_DATA_DIRS': '/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/opencw/.openclaw/openclaw-ros/projects/04_yolo_detector/src/yolo_detector/build/yolo_detector/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/opencw/.openclaw/openclaw-ros/projects/04_yolo_detector/src/yolo_detector/install/yolo_detector/lib/python3.12/site-packages:/home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/build/camera_capture:/home/opencw/.openclaw/openclaw-ros/projects/03_camera_capture/src/camera_capture/install/camera_capture/lib/python3.12/site-packages:/opt/ros/kilted/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'OPENCLAW_PATH_BOOTSTRAPPED': '1'}, 'shell': False}
+[3.305387] (-) TimerEvent: {}
+[3.405716] (-) TimerEvent: {}
+[3.506067] (-) TimerEvent: {}
+[3.606399] (-) TimerEvent: {}
+[3.706699] (-) TimerEvent: {}
+[3.806998] (-) TimerEvent: {}
+[3.907293] (-) TimerEvent: {}
+[4.007622] (-) TimerEvent: {}
+[4.107927] (-) TimerEvent: {}
+[4.208211] (-) TimerEvent: {}
+[4.308494] (-) TimerEvent: {}
+[4.408834] (-) TimerEvent: {}
+[4.509128] (-) TimerEvent: {}
+[4.534401] (yolo_detector) StdoutLine: {'line': b'running develop\n'}
+[4.609291] (-) TimerEvent: {}
+[4.709611] (-) TimerEvent: {}
+[4.809888] (-) TimerEvent: {}
+[4.910189] (-) TimerEvent: {}
+[5.010473] (-) TimerEvent: {}
+[5.110803] (-) TimerEvent: {}
+[5.211124] (-) TimerEvent: {}
+[5.311452] (-) TimerEvent: {}
+[5.335699] (yolo_detector) StdoutLine: {'line': b'running egg_info\n'}
+[5.402717] (yolo_detector) StdoutLine: {'line': b'writing yolo_detector.egg-info/PKG-INFO\n'}
+[5.403827] (yolo_detector) StdoutLine: {'line': b'writing dependency_links to yolo_detector.egg-info/dependency_links.txt\n'}
+[5.410841] (yolo_detector) StdoutLine: {'line': b'writing entry points to yolo_detector.egg-info/entry_points.txt\n'}
+[5.411727] (yolo_detector) StdoutLine: {'line': b'writing requirements to yolo_detector.egg-info/requires.txt\n'}
+[5.412333] (-) TimerEvent: {}
+[5.412960] (yolo_detector) StdoutLine: {'line': b'writing top-level names to yolo_detector.egg-info/top_level.txt\n'}
+[5.512507] (-) TimerEvent: {}
+[5.558921] (yolo_detector) StdoutLine: {'line': b"reading manifest file 'yolo_detector.egg-info/SOURCES.txt'\n"}
+[5.562039] (yolo_detector) StdoutLine: {'line': b"writing manifest file 'yolo_detector.egg-info/SOURCES.txt'\n"}
+[5.612678] (-) TimerEvent: {}
+[5.636323] (yolo_detector) StdoutLine: {'line': b'running build_ext\n'}
+[5.637172] (yolo_detector) StdoutLine: {'line': b'Creating /home/opencw/.openclaw/openclaw-ros/projects/04_yolo_detector/src/yolo_detector/install/yolo_detector/lib/python3.12/site-packages/yolo-detector.egg-link (link to .)\n'}
+[5.639688] (yolo_detector) StdoutLine: {'line': b'Installing detector script to /home/opencw/.openclaw/openclaw-ros/projects/04_yolo_detector/src/yolo_detector/install/yolo_detector/lib/yolo_detector\n'}
+[5.640780] (yolo_detector) StdoutLine: {'line': b'Installing logger script to /home/opencw/.openclaw/openclaw-ros/projects/04_yolo_detector/src/yolo_detector/install/yolo_detector/lib/yolo_detector\n'}
+[5.642163] (yolo_detector) StdoutLine: {'line': b'\n'}
+[5.642866] (yolo_detector) StdoutLine: {'line': b'Installed /home/opencw/.openclaw/openclaw-ros/projects/04_yolo_detector/src/yolo_detector/build/yolo_detector\n'}
+[5.643240] (yolo_detector) StdoutLine: {'line': b'running symlink_data\n'}
+[5.712892] (-) TimerEvent: {}
+[5.796304] (yolo_detector) CommandEnded: {'returncode': 0}
+[5.813026] (-) TimerEvent: {}
+[5.865408] (yolo_detector) JobEnded: {'identifier': 'yolo_detector', 'rc': 0}
+[5.867633] (-) EventReactorShutdown: {}
