@@ -13,6 +13,8 @@ Prevent drift between simulation and real deployment. All components must respec
 | /camera/image_raw | sensor_msgs/Image | camera_ros | image_saver | raw camera frames (best effort) |
 | /capture_request | std_msgs/Empty | user/telegram | image_saver | trigger to save current frame |
 | /detections | vision_msgs/Detection2DArray | yolo_detector | logger | Object detection results |
+| /surveillance/alert | std_msgs/String | surveillant | email_mocker | Trigger for security alert |
+| /detections/visual_debug | sensor_msgs/Image | yolo_detector | surveillance | Labeled frame for audit/email |
 
 ## Services / Actions
 Document here when added.
