@@ -2,7 +2,9 @@
 ## Purpose
 Prevent drift between simulation and real deployment. All components must respect these interfaces.
 
-## Topics
+## Topics Structure Example
+This is an example of a topic structure!
+
 | Name | Type | Publisher | Subscriber | Notes |
 |------|------|-----------|------------|-------|
 | /camera/image_raw | sensor_msgs/Image | camera | detector | best effort |

@@ -1,2 +1,4 @@
 captures/
 logs/
+
+*__pycache__*
