@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: surveillance-logic
+Version: 0.0.1
+Summary: Professional grade surveillance logic with person detection and email mocking
+Maintainer: Rosie ROS Orchestrator
+Maintainer-email: rosie.orchestrate@gmail.com
+License: Apache-2.0
