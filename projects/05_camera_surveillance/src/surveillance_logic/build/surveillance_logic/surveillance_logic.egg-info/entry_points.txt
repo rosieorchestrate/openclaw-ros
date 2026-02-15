@@ -1,0 +1,3 @@
+[console_scripts]
+email_mocker = surveillance_logic.email_mocker:main
+surveillant = surveillance_logic.surveillant:main

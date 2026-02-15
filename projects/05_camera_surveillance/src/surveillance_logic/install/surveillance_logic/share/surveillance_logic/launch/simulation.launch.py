@@ -1,0 +1,1 @@
+/home/opencw/.openclaw/openclaw-ros/projects/05_camera_surveillance/src/surveillance_logic/build/surveillance_logic/launch/simulation.launch.py

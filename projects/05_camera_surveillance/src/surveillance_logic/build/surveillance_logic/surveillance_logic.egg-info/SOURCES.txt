@@ -1,12 +1,14 @@
 package.xml
 setup.cfg
 setup.py
+launch/simulation.launch.py
 resource/surveillance_logic
 surveillance_logic/__init__.py
 surveillance_logic/py.typed
 surveillance_logic.egg-info/PKG-INFO
 surveillance_logic.egg-info/SOURCES.txt
 surveillance_logic.egg-info/dependency_links.txt
+surveillance_logic.egg-info/entry_points.txt
 surveillance_logic.egg-info/requires.txt
 surveillance_logic.egg-info/top_level.txt
 surveillance_logic.egg-info/zip-safe
