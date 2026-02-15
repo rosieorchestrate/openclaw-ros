@@ -1,0 +1,13 @@
+running develop
+running egg_info
+writing surveillance_logic.egg-info/PKG-INFO
+writing dependency_links to surveillance_logic.egg-info/dependency_links.txt
+writing requirements to surveillance_logic.egg-info/requires.txt
+writing top-level names to surveillance_logic.egg-info/top_level.txt
+reading manifest file 'surveillance_logic.egg-info/SOURCES.txt'
+writing manifest file 'surveillance_logic.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/install/surveillance_logic/lib/python3.12/site-packages/surveillance-logic.egg-link (link to .)
+
+Installed /home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/build/surveillance_logic
+running symlink_data

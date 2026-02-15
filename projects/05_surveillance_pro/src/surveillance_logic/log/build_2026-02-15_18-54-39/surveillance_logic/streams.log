@@ -1,0 +1,20 @@
+[3.502s] Invoking command in '/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic': PYTHONPATH=/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/build/surveillance_logic/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/install/surveillance_logic/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/surveillance_logic build --build-base /home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/build/surveillance_logic/build install --record /home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/build/surveillance_logic/install.log --single-version-externally-managed install_data
+[4.609s] running egg_info
+[4.683s] writing build/surveillance_logic/surveillance_logic.egg-info/PKG-INFO
+[4.684s] writing dependency_links to build/surveillance_logic/surveillance_logic.egg-info/dependency_links.txt
+[4.691s] writing requirements to build/surveillance_logic/surveillance_logic.egg-info/requires.txt
+[4.692s] writing top-level names to build/surveillance_logic/surveillance_logic.egg-info/top_level.txt
+[4.850s] reading manifest file 'build/surveillance_logic/surveillance_logic.egg-info/SOURCES.txt'
+[4.851s] adding license file 'LICENSE'
+[4.854s] writing manifest file 'build/surveillance_logic/surveillance_logic.egg-info/SOURCES.txt'
+[4.855s] running build
+[4.855s] running build_py
+[4.856s] running install
+[4.881s] running install_lib
+[4.962s] running install_data
+[4.963s] running install_egg_info
+[5.047s] removing '/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/install/surveillance_logic/lib/python3.12/site-packages/surveillance_logic-0.0.0-py3.12.egg-info' (and everything under it)
+[5.049s] Copying build/surveillance_logic/surveillance_logic.egg-info to /home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/install/surveillance_logic/lib/python3.12/site-packages/surveillance_logic-0.0.0-py3.12.egg-info
+[5.054s] running install_scripts
+[5.629s] writing list of installed files to '/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/build/surveillance_logic/install.log'
+[5.772s] Invoked command in '/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic' returned '0': PYTHONPATH=/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/build/surveillance_logic/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/install/surveillance_logic/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/surveillance_logic build --build-base /home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/build/surveillance_logic/build install --record /home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/build/surveillance_logic/install.log --single-version-externally-managed install_data

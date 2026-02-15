@@ -1,0 +1,15 @@
+[3.236s] Invoking command in '/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/build/surveillance_logic': PYTHONPATH=/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/build/surveillance_logic/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/install/surveillance_logic/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/build/surveillance_logic/build --no-deps symlink_data
+[4.538s] running develop
+[5.336s] running egg_info
+[5.404s] writing surveillance_logic.egg-info/PKG-INFO
+[5.405s] writing dependency_links to surveillance_logic.egg-info/dependency_links.txt
+[5.412s] writing requirements to surveillance_logic.egg-info/requires.txt
+[5.413s] writing top-level names to surveillance_logic.egg-info/top_level.txt
+[5.562s] reading manifest file 'surveillance_logic.egg-info/SOURCES.txt'
+[5.565s] writing manifest file 'surveillance_logic.egg-info/SOURCES.txt'
+[5.640s] running build_ext
+[5.641s] Creating /home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/install/surveillance_logic/lib/python3.12/site-packages/surveillance-logic.egg-link (link to .)
+[5.644s] 
+[5.644s] Installed /home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/build/surveillance_logic
+[5.644s] running symlink_data
+[5.797s] Invoked command in '/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/build/surveillance_logic' returned '0': PYTHONPATH=/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/build/surveillance_logic/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/install/surveillance_logic/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/build/surveillance_logic/build --no-deps symlink_data

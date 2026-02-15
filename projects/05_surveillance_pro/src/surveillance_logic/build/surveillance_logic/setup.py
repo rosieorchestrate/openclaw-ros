@@ -1,1 +1,0 @@
-/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/setup.py

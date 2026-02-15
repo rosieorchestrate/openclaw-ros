@@ -1,0 +1,82 @@
+[0.000000] (-) TimerEvent: {}
+[0.000452] (surveillance_logic) JobQueued: {'identifier': 'surveillance_logic', 'dependencies': OrderedDict()}
+[0.001525] (surveillance_logic) JobStarted: {'identifier': 'surveillance_logic'}
+[0.099330] (-) TimerEvent: {}
+[0.199663] (-) TimerEvent: {}
+[0.299993] (-) TimerEvent: {}
+[0.400386] (-) TimerEvent: {}
+[0.500713] (-) TimerEvent: {}
+[0.601028] (-) TimerEvent: {}
+[0.701387] (-) TimerEvent: {}
+[0.801704] (-) TimerEvent: {}
+[0.902140] (-) TimerEvent: {}
+[1.002570] (-) TimerEvent: {}
+[1.103140] (-) TimerEvent: {}
+[1.203719] (-) TimerEvent: {}
+[1.304183] (-) TimerEvent: {}
+[1.404505] (-) TimerEvent: {}
+[1.504810] (-) TimerEvent: {}
+[1.605137] (-) TimerEvent: {}
+[1.705451] (-) TimerEvent: {}
+[1.805785] (-) TimerEvent: {}
+[1.906159] (-) TimerEvent: {}
+[2.006482] (-) TimerEvent: {}
+[2.106776] (-) TimerEvent: {}
+[2.207115] (-) TimerEvent: {}
+[2.307401] (-) TimerEvent: {}
+[2.407716] (-) TimerEvent: {}
+[2.508025] (-) TimerEvent: {}
+[2.608366] (-) TimerEvent: {}
+[2.708672] (-) TimerEvent: {}
+[2.808973] (-) TimerEvent: {}
+[2.909327] (-) TimerEvent: {}
+[3.009636] (-) TimerEvent: {}
+[3.109929] (-) TimerEvent: {}
+[3.210320] (-) TimerEvent: {}
+[3.310713] (-) TimerEvent: {}
+[3.411299] (-) TimerEvent: {}
+[3.473434] (surveillance_logic) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', 'build/surveillance_logic', 'build', '--build-base', '/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/build/surveillance_logic/build', 'install', '--record', '/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/build/surveillance_logic/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic', 'env': {'USER': 'opencw', 'OPENCLAW_SYSTEMD_UNIT': 'openclaw-gateway.service', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/kilted/lib/aarch64-linux-gnu:/opt/ros/kilted/lib', 'VIPSHOME': '/target', 'HOME': '/home/opencw', 'OPENCLAW_GATEWAY_TOKEN': '7ea1fb367e0e502879fcb10db1a1366b776651c7d921334b', 'OLDPWD': '/home/opencw/.openclaw/workspace', 'ROS_PYTHON_VERSION': '3', 'GTK_MODULES': 'gail:atk-bridge', 'NODE_NO_WARNINGS': '1', 'MANAGERPID': '1557', 'SYSTEMD_EXEC_PID': '4964', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'OPENCLAW_SERVICE_VERSION': '2026.2.9', 'ROS_DISTRO': 'kilted', 'LOGNAME': 'opencw', 'JOURNAL_STREAM': '8:37648', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openclaw-gateway.service/memory.pressure', 'PATH': '/opt/ros/kilted/bin:/usr/local/bin:/usr/bin:/bin:/home/opencw/.local/bin:/home/opencw/.npm-global/bin:/home/opencw/bin:/home/opencw/.nvm/current/bin:/home/opencw/.fnm/current/bin:/home/opencw/.volta/bin:/home/opencw/.asdf/shims:/home/opencw/.local/share/pnpm:/home/opencw/.bun/bin', 'INVOCATION_ID': 'da7fd63d257d4c74acec77a4bfb7e78c', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'C.UTF-8', 'OPENCLAW_GATEWAY_PORT': '18789', 'SSH_AUTH_SOCK': '/run/user/1000/gnupg/S.gpg-agent.ssh', 'AMENT_PREFIX_PATH': '/opt/ros/kilted', 'SHELL': '/usr/bin/zsh', 'QT_ACCESSIBILITY': '1', 'OPENCLAW_SERVICE_KIND': 'gateway', 'OPENCLAW_SERVICE_MARKER': 'openclaw', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/build/surveillance_logic', 'XDG_DATA_DIRS': '/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/build/surveillance_logic/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/install/surveillance_logic/lib/python3.12/site-packages:/opt/ros/kilted/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'OPENCLAW_PATH_BOOTSTRAPPED': '1'}, 'shell': False}
+[3.511441] (-) TimerEvent: {}
+[3.611775] (-) TimerEvent: {}
+[3.712153] (-) TimerEvent: {}
+[3.812489] (-) TimerEvent: {}
+[3.912820] (-) TimerEvent: {}
+[4.013169] (-) TimerEvent: {}
+[4.113486] (-) TimerEvent: {}
+[4.213805] (-) TimerEvent: {}
+[4.314137] (-) TimerEvent: {}
+[4.414461] (-) TimerEvent: {}
+[4.514776] (-) TimerEvent: {}
+[4.586415] (surveillance_logic) StdoutLine: {'line': b'running egg_info\n'}
+[4.614948] (-) TimerEvent: {}
+[4.659570] (surveillance_logic) StdoutLine: {'line': b'writing build/surveillance_logic/surveillance_logic.egg-info/PKG-INFO\n'}
+[4.660697] (surveillance_logic) StdoutLine: {'line': b'writing dependency_links to build/surveillance_logic/surveillance_logic.egg-info/dependency_links.txt\n'}
+[4.667923] (surveillance_logic) StdoutLine: {'line': b'writing requirements to build/surveillance_logic/surveillance_logic.egg-info/requires.txt\n'}
+[4.668965] (surveillance_logic) StdoutLine: {'line': b'writing top-level names to build/surveillance_logic/surveillance_logic.egg-info/top_level.txt\n'}
+[4.715165] (-) TimerEvent: {}
+[4.815500] (-) TimerEvent: {}
+[4.823490] (surveillance_logic) StdoutLine: {'line': b"reading manifest file 'build/surveillance_logic/surveillance_logic.egg-info/SOURCES.txt'\n"}
+[4.824988] (surveillance_logic) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[4.827477] (surveillance_logic) StdoutLine: {'line': b"writing manifest file 'build/surveillance_logic/surveillance_logic.egg-info/SOURCES.txt'\n"}
+[4.828334] (surveillance_logic) StdoutLine: {'line': b'running build\n'}
+[4.828759] (surveillance_logic) StdoutLine: {'line': b'running build_py\n'}
+[4.830164] (surveillance_logic) StdoutLine: {'line': b'running install\n'}
+[4.856179] (surveillance_logic) StdoutLine: {'line': b'running install_lib\n'}
+[4.915653] (-) TimerEvent: {}
+[4.933199] (surveillance_logic) StdoutLine: {'line': b'running install_data\n'}
+[4.933959] (surveillance_logic) StdoutLine: {'line': b'running install_egg_info\n'}
+[5.015832] (-) TimerEvent: {}
+[5.017131] (surveillance_logic) StdoutLine: {'line': b"removing '/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/install/surveillance_logic/lib/python3.12/site-packages/surveillance_logic-0.0.0-py3.12.egg-info' (and everything under it)\n"}
+[5.019030] (surveillance_logic) StdoutLine: {'line': b'Copying build/surveillance_logic/surveillance_logic.egg-info to /home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/install/surveillance_logic/lib/python3.12/site-packages/surveillance_logic-0.0.0-py3.12.egg-info\n'}
+[5.024451] (surveillance_logic) StdoutLine: {'line': b'running install_scripts\n'}
+[5.115993] (-) TimerEvent: {}
+[5.216381] (-) TimerEvent: {}
+[5.316673] (-) TimerEvent: {}
+[5.417007] (-) TimerEvent: {}
+[5.517388] (-) TimerEvent: {}
+[5.602493] (surveillance_logic) StdoutLine: {'line': b"writing list of installed files to '/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/build/surveillance_logic/install.log'\n"}
+[5.617665] (-) TimerEvent: {}
+[5.718225] (-) TimerEvent: {}
+[5.749398] (surveillance_logic) CommandEnded: {'returncode': 0}
+[5.800734] (surveillance_logic) JobEnded: {'identifier': 'surveillance_logic', 'rc': 0}
+[5.803130] (-) EventReactorShutdown: {}
