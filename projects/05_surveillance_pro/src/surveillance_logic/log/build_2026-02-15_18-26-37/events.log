@@ -1,0 +1,87 @@
+[0.000000] (-) TimerEvent: {}
+[0.000237] (surveillance_logic) JobQueued: {'identifier': 'surveillance_logic', 'dependencies': OrderedDict()}
+[0.001393] (surveillance_logic) JobStarted: {'identifier': 'surveillance_logic'}
+[0.099285] (-) TimerEvent: {}
+[0.199619] (-) TimerEvent: {}
+[0.299948] (-) TimerEvent: {}
+[0.400338] (-) TimerEvent: {}
+[0.500652] (-) TimerEvent: {}
+[0.600952] (-) TimerEvent: {}
+[0.701301] (-) TimerEvent: {}
+[0.801601] (-) TimerEvent: {}
+[0.902004] (-) TimerEvent: {}
+[1.002448] (-) TimerEvent: {}
+[1.102779] (-) TimerEvent: {}
+[1.203094] (-) TimerEvent: {}
+[1.303486] (-) TimerEvent: {}
+[1.403795] (-) TimerEvent: {}
+[1.504129] (-) TimerEvent: {}
+[1.604467] (-) TimerEvent: {}
+[1.704771] (-) TimerEvent: {}
+[1.805077] (-) TimerEvent: {}
+[1.905415] (-) TimerEvent: {}
+[2.005720] (-) TimerEvent: {}
+[2.106054] (-) TimerEvent: {}
+[2.206421] (-) TimerEvent: {}
+[2.306776] (-) TimerEvent: {}
+[2.407118] (-) TimerEvent: {}
+[2.507483] (-) TimerEvent: {}
+[2.607772] (-) TimerEvent: {}
+[2.708073] (-) TimerEvent: {}
+[2.808419] (-) TimerEvent: {}
+[2.908715] (-) TimerEvent: {}
+[3.009033] (-) TimerEvent: {}
+[3.109347] (-) TimerEvent: {}
+[3.209888] (-) TimerEvent: {}
+[3.310512] (-) TimerEvent: {}
+[3.363867] (surveillance_logic) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/build/surveillance_logic/build', '--no-deps', 'symlink_data'], 'cwd': '/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/build/surveillance_logic', 'env': {'USER': 'opencw', 'OPENCLAW_SYSTEMD_UNIT': 'openclaw-gateway.service', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/kilted/lib/aarch64-linux-gnu:/opt/ros/kilted/lib', 'VIPSHOME': '/target', 'HOME': '/home/opencw', 'OPENCLAW_GATEWAY_TOKEN': '7ea1fb367e0e502879fcb10db1a1366b776651c7d921334b', 'OLDPWD': '/home/opencw/.openclaw/workspace', 'ROS_PYTHON_VERSION': '3', 'GTK_MODULES': 'gail:atk-bridge', 'NODE_NO_WARNINGS': '1', 'MANAGERPID': '1557', 'SYSTEMD_EXEC_PID': '4964', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'OPENCLAW_SERVICE_VERSION': '2026.2.9', 'ROS_DISTRO': 'kilted', 'LOGNAME': 'opencw', 'JOURNAL_STREAM': '8:37648', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openclaw-gateway.service/memory.pressure', 'PATH': '/opt/ros/kilted/bin:/usr/local/bin:/usr/bin:/bin:/home/opencw/.local/bin:/home/opencw/.npm-global/bin:/home/opencw/bin:/home/opencw/.nvm/current/bin:/home/opencw/.fnm/current/bin:/home/opencw/.volta/bin:/home/opencw/.asdf/shims:/home/opencw/.local/share/pnpm:/home/opencw/.bun/bin', 'INVOCATION_ID': 'da7fd63d257d4c74acec77a4bfb7e78c', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'C.UTF-8', 'OPENCLAW_GATEWAY_PORT': '18789', 'SSH_AUTH_SOCK': '/run/user/1000/gnupg/S.gpg-agent.ssh', 'AMENT_PREFIX_PATH': '/opt/ros/kilted', 'SHELL': '/usr/bin/zsh', 'QT_ACCESSIBILITY': '1', 'OPENCLAW_SERVICE_KIND': 'gateway', 'OPENCLAW_SERVICE_MARKER': 'openclaw', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/build/surveillance_logic', 'XDG_DATA_DIRS': '/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/build/surveillance_logic/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/install/surveillance_logic/lib/python3.12/site-packages:/opt/ros/kilted/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'OPENCLAW_PATH_BOOTSTRAPPED': '1'}, 'shell': False}
+[3.410657] (-) TimerEvent: {}
+[3.510985] (-) TimerEvent: {}
+[3.611317] (-) TimerEvent: {}
+[3.711677] (-) TimerEvent: {}
+[3.812031] (-) TimerEvent: {}
+[3.912460] (-) TimerEvent: {}
+[4.012796] (-) TimerEvent: {}
+[4.113142] (-) TimerEvent: {}
+[4.213529] (-) TimerEvent: {}
+[4.313871] (-) TimerEvent: {}
+[4.414249] (-) TimerEvent: {}
+[4.514587] (-) TimerEvent: {}
+[4.614910] (-) TimerEvent: {}
+[4.709014] (surveillance_logic) StdoutLine: {'line': b'running develop\n'}
+[4.715063] (-) TimerEvent: {}
+[4.815473] (-) TimerEvent: {}
+[4.915818] (-) TimerEvent: {}
+[5.016226] (-) TimerEvent: {}
+[5.116573] (-) TimerEvent: {}
+[5.216922] (-) TimerEvent: {}
+[5.317308] (-) TimerEvent: {}
+[5.417656] (-) TimerEvent: {}
+[5.517994] (-) TimerEvent: {}
+[5.541681] (surveillance_logic) StdoutLine: {'line': b'running egg_info\n'}
+[5.542471] (surveillance_logic) StdoutLine: {'line': b'creating surveillance_logic.egg-info\n'}
+[5.610011] (surveillance_logic) StdoutLine: {'line': b'writing surveillance_logic.egg-info/PKG-INFO\n'}
+[5.611165] (surveillance_logic) StdoutLine: {'line': b'writing dependency_links to surveillance_logic.egg-info/dependency_links.txt\n'}
+[5.612096] (surveillance_logic) StdoutLine: {'line': b'writing requirements to surveillance_logic.egg-info/requires.txt\n'}
+[5.612962] (surveillance_logic) StdoutLine: {'line': b'writing top-level names to surveillance_logic.egg-info/top_level.txt\n'}
+[5.613811] (surveillance_logic) StdoutLine: {'line': b"writing manifest file 'surveillance_logic.egg-info/SOURCES.txt'\n"}
+[5.618216] (-) TimerEvent: {}
+[5.718548] (-) TimerEvent: {}
+[5.765722] (surveillance_logic) StdoutLine: {'line': b"reading manifest file 'surveillance_logic.egg-info/SOURCES.txt'\n"}
+[5.768334] (surveillance_logic) StdoutLine: {'line': b"writing manifest file 'surveillance_logic.egg-info/SOURCES.txt'\n"}
+[5.818715] (-) TimerEvent: {}
+[5.848314] (surveillance_logic) StdoutLine: {'line': b'running build_ext\n'}
+[5.849016] (surveillance_logic) StdoutLine: {'line': b'Creating /home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/install/surveillance_logic/lib/python3.12/site-packages/surveillance-logic.egg-link (link to .)\n'}
+[5.853298] (surveillance_logic) StdoutLine: {'line': b'\n'}
+[5.853822] (surveillance_logic) StdoutLine: {'line': b'Installed /home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/build/surveillance_logic\n'}
+[5.854651] (surveillance_logic) StdoutLine: {'line': b'running symlink_data\n'}
+[5.855117] (surveillance_logic) StdoutLine: {'line': b'creating /home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/install/surveillance_logic/share/ament_index\n'}
+[5.855827] (surveillance_logic) StdoutLine: {'line': b'creating /home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/install/surveillance_logic/share/ament_index/resource_index\n'}
+[5.856161] (surveillance_logic) StdoutLine: {'line': b'creating /home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/install/surveillance_logic/share/ament_index/resource_index/packages\n'}
+[5.856631] (surveillance_logic) StdoutLine: {'line': b'symbolically linking /home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/build/surveillance_logic/resource/surveillance_logic -> /home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/install/surveillance_logic/share/ament_index/resource_index/packages\n'}
+[5.857940] (surveillance_logic) StdoutLine: {'line': b'symbolically linking /home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/build/surveillance_logic/package.xml -> /home/opencw/.openclaw/openclaw-ros/projects/05_surveillance_pro/src/surveillance_logic/install/surveillance_logic/share/surveillance_logic\n'}
+[5.922309] (-) TimerEvent: {}
+[6.015722] (surveillance_logic) CommandEnded: {'returncode': 0}
+[6.022638] (-) TimerEvent: {}
+[6.063953] (surveillance_logic) JobEnded: {'identifier': 'surveillance_logic', 'rc': 0}
+[6.066320] (-) EventReactorShutdown: {}
