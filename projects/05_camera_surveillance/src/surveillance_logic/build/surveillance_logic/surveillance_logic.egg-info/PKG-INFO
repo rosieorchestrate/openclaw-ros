@@ -1,7 +1,0 @@
-Metadata-Version: 2.1
-Name: surveillance-logic
-Version: 0.0.0
-Summary: Camera based surveillance with person detection
-Maintainer: Rosie ROS Orchestrator
-Maintainer-email: rosie@openclaw.ai
-License: Apache-2.0

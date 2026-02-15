@@ -6,7 +6,7 @@ package_name = 'surveillance_logic'
 
 setup(
     name=package_name,
-    version='0.0.0',
+    version='0.0.1',
     packages=find_packages(exclude=['test']),
     data_files=[
         ('share/ament_index/resource_index/packages',
@@ -17,8 +17,8 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='Rosie ROS Orchestrator',
-    maintainer_email='rosie@openclaw.ai',
-    description='Camera based surveillance with person detection',
+    maintainer_email='rosie.orchestrate@gmail.com',
+    description='Professional grade surveillance logic with person detection and email mocking',
     license='Apache-2.0',
     tests_require=['pytest'],
     entry_points={
