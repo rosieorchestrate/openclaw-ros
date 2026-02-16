@@ -9,7 +9,7 @@ class MockEmailNotifier(Node):
         super().__init__('mock_email_notifier')
         
         self.declare_parameter('email_target', 'rosie.orchestrate@gmail.com')
-        self.declare_parameter('log_dir', 'logs')
+        self.declare_parameter('log_dir', '/home/opencw/.openclaw/openclaw-ros/projects/06_camera_surveillance/logs')
         
         self.target = self.get_parameter('email_target').get_parameter_value().string_value
         self.log_dir = self.get_parameter('log_dir').get_parameter_value().string_value
