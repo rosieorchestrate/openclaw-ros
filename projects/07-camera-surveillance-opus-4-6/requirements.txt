@@ -1,0 +1,13 @@
+# Camera Surveillance System - Python Dependencies
+# Most are provided by ROS2 Kilted installation
+#
+# ROS2 packages (installed via apt):
+#   ros-kilted-camera-ros
+#   ros-kilted-cv-bridge
+#   ros-kilted-sensor-msgs
+#   ros-kilted-vision-msgs
+#   ros-kilted-image-transport
+#
+# Python packages:
+opencv-python>=4.5.0
+numpy>=1.20.0

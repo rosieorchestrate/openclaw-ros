@@ -1,0 +1,32 @@
+# Surveillance System Configuration
+# -----------------------------------
+
+camera:
+  topic: "/camera/image_raw"
+  # Throttle rate: frames per second to process (1fps = 1 detection per second)
+  detection_fps: 1.0
+
+detection:
+  # Model paths (relative to project root)
+  prototxt: "models/deploy.prototxt"
+  caffemodel: "models/mobilenet_ssd.caffemodel"
+  # Confidence threshold for person detection (0.0 - 1.0)
+  confidence_threshold: 0.5
+  # MobileNet-SSD input size
+  input_size: 300
+  # Class index for 'person' in MobileNet-SSD
+  person_class_id: 15
+
+alert:
+  # Email configuration (mock mode first)
+  mock_mode: true
+  recipient: "rosie.orchestrate@gmail.com"
+  subject_prefix: "[SURVEILLANCE ALERT]"
+  # Cooldown between alerts for the same detection (seconds)
+  alert_cooldown_seconds: 30
+
+paths:
+  # All paths relative to project root
+  logs: "logs"
+  captures: "captures"
+  snapshots: "captures/snapshots"
