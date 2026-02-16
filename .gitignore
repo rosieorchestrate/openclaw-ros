@@ -1,4 +1,11 @@
-captures/
+# ROS2 Build artifacts
+build/
+install/
+log/
 logs/
-
-*__pycache__*
+captures/
+__pycache__/
+*.pyc
+*.egg-link
+*.egg-info
+.DS_Store

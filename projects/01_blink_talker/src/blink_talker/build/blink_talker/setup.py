@@ -1,1 +1,1 @@
-/home/opencw/.openclaw/workspace/Projects/blink_talker/setup.py
+/home/opencw/.openclaw/openclaw-ros/projects/01_blink_talker/src/blink_talker/setup.py
