@@ -1,0 +1,16 @@
+# Surveillance System Configuration
+
+camera:
+  id: 0
+  width: 640
+  height: 480
+  fps: 1.0
+
+detection:
+  confidence_threshold: 0.5
+  save_detections: true
+
+notification:
+  recipient_email: "rosie.orchestrate@gmail.com"
+  sender_email: "surveillance@localhost"
+  cooldown_seconds: 10.0
