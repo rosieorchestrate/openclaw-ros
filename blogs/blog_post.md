@@ -8,6 +8,10 @@
 
 ---
 
+## TL;DR
+
+!EDIT! Add tldr
+
 ## Table of Contents
 
 1. [The Idea: Agentic Robotics Development](#1-the-idea-agentic-robotics-development)
@@ -50,10 +54,6 @@ This created a more realistic test case for agentic development than if we'd bee
 
 Our hypothesis was simple but ambitious: **A constrained AI agent, limited to developing only ROS2 applications, could successfully build, deploy, and maintain a working robotics system on a Raspberry Pi—without requiring the human supervisors to be ROS2 experts.**
 
----
-
-## 2. The Final Goal
-
 Our ultimate objective evolved throughout the project but remained focused on a core principle:
 
 > **From a high-level directive, develop a complete ROS2 application and monitor it in a meaningful way, complying with high-level monitoring directives.**
@@ -74,6 +74,12 @@ The final specification became a **camera-based surveillance system** with:
 
 ---
 
+## 2. The Setup
+
+!EDIT! raspi setup (ubuntu), camera setup, openclaw setup, openrouter, telegram
+
+---
+
 ## 3. How We Did It: Skills, Contracts, and Raspberry Pi
 
 ### Skills Architecture
@@ -88,6 +94,8 @@ We developed a suite of specialized skills that guided the agent's behavior:
 | **ros2-diag-health** | Monitor system health (CPU, RAM, temperature) |
 | **ros2-contract-guard** | Enforce development guidelines and prevent unsafe actions |
 | **skill-navigator** | Help the agent select appropriate skills for tasks |
+
+!EDIT! Mention scripts being developed and used
 
 ### Development Contracts
 
@@ -121,6 +129,13 @@ A key requirement was that the agent commit its progress to GitHub. This provide
 ---
 
 ## 4. The Journey: Chronological Development
+
+!EDIT! Go quickly over first attempts and ideas (LED + Terminal), explain development workflow (discovery, simulation, etc., maybe also above...). 
+Gemini used old libraries -> did not work, Claude found right libraries with guidance. 
+Then, explain envisioned demo setup (camera, email, detection) as simple ROS2 application.
+Model comparison: see table below
+include prompts??
+What worked well, what not
 
 ### Phase 1: Initial Setup and Skill Creation
 
@@ -266,7 +281,7 @@ A particularly interesting application is **low-risk ROS2 development** where:
 This mirrors DevOps practices but with an AI agent that can actually *write* and *test* code autonomously.
 
 ### Safety Considerations
-
+!EDIT! One sentence
 For industrial deployment, we would recommend:
 - **Narrower permissions:** Agent can read/write in project dirs but not system-wide
 - **Hardware interlocks:** Physical E-stops that can't be overridden by software
@@ -276,7 +291,7 @@ For industrial deployment, we would recommend:
 ---
 
 ## 7. Lessons Learned
-
+!EDIT! Check for repetition
 ### What Worked Well
 
 1. **Skill Architecture:** The skill-based system (ros2-discovery, ros2-generation-pro, etc.) provided clear boundaries and guidance
