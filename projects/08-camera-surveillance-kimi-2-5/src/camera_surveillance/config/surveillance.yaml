@@ -1,0 +1,35 @@
+# Camera Surveillance Configuration
+# Adjust these parameters for your deployment
+
+# Camera settings
+camera_node:
+  ros__parameters:
+    capture_rate_hz: 1.0        # Hz - max 1 capture per second (Pi safety)
+    camera_index: 0              # libcamera camera index
+    frame_width: 640             # Capture width
+    frame_height: 480            # Capture height
+
+# Person detection settings
+detector_node:
+  ros__parameters:
+    confidence_threshold: 0.5    # 0.0-1.0, higher = more strict
+    capture_dir: "captures"      # Relative to project root
+    model_dir: "models"          # MobileNet SSD download location
+
+# Email notification settings
+email_node:
+  ros__parameters:
+    mock_mode: true              # true = log to file, false = send real email
+    email_to: "rosie.orchestrate@gmail.com"
+    email_from: "surveillance@rosie.local"
+    smtp_server: "smtp.gmail.com"
+    smtp_port: 587
+    smtp_username: ""            # Set for real email mode
+    smtp_password: ""            # Set for real email mode
+    log_directory: "logs"        # Mock email logs
+    capture_directory: "captures"  # Detection frames
+
+# Hardware notes for Raspberry Pi:
+# - imx219 camera module detected
+# - Detection runs locally using MobileNet SSD
+# - CPU temp monitoring recommended (>75°C throttle)

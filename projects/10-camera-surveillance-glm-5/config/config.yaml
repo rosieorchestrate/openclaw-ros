@@ -1,0 +1,22 @@
+# Surveillance System Configuration
+camera:
+  device_index: 0
+  width: 640
+  height: 480
+  fps: 1  # Detection frequency (1 per second to avoid overload)
+
+detection:
+  model: "mediapipe"  # Using MediaPipe for person detection
+  confidence_threshold: 0.5
+  save_detections: true
+
+notification:
+  email:
+    recipient: "rosie.orchestrate@gmail.com"
+    sender: "surveillance@localhost"
+  log_dir: "logs"
+  captures_dir: "captures"
+
+logging:
+  level: "INFO"
+  file: "logs/surveillance.log"
