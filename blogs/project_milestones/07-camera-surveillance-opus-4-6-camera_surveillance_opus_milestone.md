@@ -78,7 +78,7 @@ During the live run on February 16, 2026, the system operated for approximately 
 
 **Featured Detection — Frame #13:**
 
-![Person detected with 0.77 confidence](assets/detection_20260216_160620_0013.jpg)
+![Person detected with 0.77 confidence](../assets/detection_20260216_160620_0013.jpg)
 
 This frame shows a pedestrian walking along the sidewalk, captured from the Pi Camera's overhead vantage point. The MobileNet-SSD model identified them with **77% confidence** — the highest confidence detection in the run. The red bounding box precisely frames the person's full body.
 

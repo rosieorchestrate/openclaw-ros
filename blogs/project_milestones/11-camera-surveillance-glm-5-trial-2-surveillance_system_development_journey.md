@@ -119,7 +119,7 @@ The system operated continuously during testing, capturing multiple detection ev
 
 ### Detection Example 1: High Confidence Detection
 
-![Detection Example 1 - Person detected with 75.75% confidence](assets/detection_20260218_112622_990752.jpg)
+![Detection Example 1 - Person detected with 75.75% confidence](../assets/detection_20260218_112622_990752.jpg)
 
 **Detection Details:**
 ```json
@@ -181,7 +181,7 @@ This is an automated message from the Raspberry Pi Surveillance System (ROS2).
 
 ### Detection Example 2: Improved Confidence
 
-![Detection Example 2 - Person detected with 77.88% confidence](assets/detection_20260218_112753_978451.jpg)
+![Detection Example 2 - Person detected with 77.88% confidence](../assets/detection_20260218_112753_978451.jpg)
 
 **Detection Details:**
 ```json
