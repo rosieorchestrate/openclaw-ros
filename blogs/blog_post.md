@@ -11,6 +11,7 @@
 ## TL;DR
 
 !EDIT! Add tldr
+We've explored ROS2 application development with OpenClaw. We've run OpenClaw locally on 4 GB Raspberry pi 5 and used Open Router for comparison of various LLM models.
 
 ## Table of Contents
 
@@ -27,56 +28,58 @@
 
 ## 1. The Idea: Agentic Robotics Development
 
-### The Core Concept
-
 When we first conceptualized using an AI agent with system access for robotics development, we saw a clear opportunity. An agent like OpenClaw—with full system access, the ability to execute commands, read/write files, and interact with hardware—should be perfectly suited for hardware-close application development and maintenance when instructed correctly.
 
-### Why ROS2?
+We wanted to test a simple idea:
 
-We chose ROS2 (Robot Operating System 2) as the development framework for several strategic reasons:
+> Can we give an AI agent a high-level goal and have it produce a working ROS2 application—without step-by-step instructions?
 
-1. **Industrial Relevance:** ROS2 is widely used in industrial robotics, automation, and research
-2. **Modularity Requirements:** ROS2 enforces stricter architectural guidelines than general-purpose coding
-3. **Built-in Constraints:** The framework's node-based architecture, topic subscription models, and QoS policies create natural boundaries that prevent the agent from going off-track
-4. **Hardware Interaction:** ROS2 provides excellent interfaces for camera modules, sensors, and actuators
+Instead of writing detailed specifications, we issued abstract directives like:
 
-### The Knowledge Gap as an Advantage
+- “Blink the LED on GPIO port 16 with frequency of 1 Hz using ROS2”
+- “Build a ROS2 surveillance system based on footage from the attached Raspberry Pi camera, which will send us an email once a person is detected using.”
+- “Monitor system health and send us a message when abnormal behavior is detected.”
 
-Here's what made our experiment particularly interesting: **both Noah and Jakub have limited knowledge of ROS2**. This knowledge gap became a feature, not a bug. Our prompts to the agent were often difficult to translate directly into ROS2 development guidelines, forcing the agent to:
-- Discover solutions through experimentation
-- Research ROS2 best practices
-- Report back with clear explanations of what it was doing
-- Handle complex integration challenges that wouldn't arise with an expert's precise instructions
+The agent (OpenClaw) had full system access: it could execute shell commands, edit files, run ROS2 tools, test in simulation, and manage version control. Its job was to:
 
-This created a more realistic test case for agentic development than if we'd been ROS2 experts providing exact specifications.
+- Design the ROS2 node architecture  
+- Implement the required functionality  
+- Test before deploying to hardware  
+- Monitor and report system status  
+- Keep the project structured and reproducible  
 
-### The Hypothesis
+We were not ROS2 experts. That was intentional. Our prompts were high-level and sometimes imprecise. The agent had to figure out how to translate high-level prompt into correct ROS2 structure and working code, and report to us its results.
 
-Our hypothesis was simple but ambitious: **A constrained AI agent, limited to developing only ROS2 applications, could successfully build, deploy, and maintain a working robotics system on a Raspberry Pi—without requiring the human supervisors to be ROS2 experts.**
-
-Our ultimate objective evolved throughout the project but remained focused on a core principle:
-
-> **From a high-level directive, develop a complete ROS2 application and monitor it in a meaningful way, complying with high-level monitoring directives.**
-
-This meant:
-- Starting with abstract goals (e.g., "build a surveillance system")
-- Allowing the agent to determine the technical implementation
-- Ensuring the system could monitor its own health (CPU temperature, process status)
-- Requiring the agent to report progress regularly
-- Mandating simulation/testing before hardware deployment
-- Having the agent commit work to GitHub for version control
-
-The final specification became a **camera-based surveillance system** with:
-- Person detection using MobileNet SSD
-- Email notifications (mocked for safety)
-- Real-time health monitoring
-- Raspberry Pi deployment capability
+In the following, we describe the setup and the results of our experiments.
 
 ---
 
 ## 2. The Setup
 
 !EDIT! raspi setup (ubuntu), camera setup, openclaw setup, openrouter, telegram
+
+#### 1. Raspberry Pi + Ubuntu + OpenClaw + Telegram
+
+We used Raaspberry Pi 5 with 4 GB of RAM for our experiments.
+Both OpenClaw agent and the ROS2 applications were running on the device.
+
+We followed [this guide](https://ajfisher.me/2026/02/03/openclaw-raspberrypi-howto/) to run OpenClaw on Ubuntu on Raspberry Pi.
+We chose Ubuntu over Raspbian OS due to its the native support of ROS2.
+
+We've integrated OpenClaw with Telegram and added it to the group with both of us.
+You can follow [this guide](https://ajfisher.me/2026/02/03/openclaw-raspberrypi-howto/) to set up the integration.
+Note, that if you want to add the OpenClaw bot to a group, you need to give it group admin rights. Additionally, you need to tag the bot in each message you want it to read.
+
+#### 2. ROS2 
+
+We've installed ROS2 Kilted base version on Raspberry Pi following the official [ROS2 guide](https://docs.ros.org/en/kilted/Installation/Ubuntu-Install-Debs.html)
+
+
+#### 3. Hardware
+
+We've attached the following hardware to our Raspberry Pi:
+- Raspberry Pi camera to standard camera port
+- Red LED in series with 220 Ohm resistor on GPIO port 16
 
 ---
 
@@ -95,7 +98,10 @@ We developed a suite of specialized skills that guided the agent's behavior:
 | **ros2-contract-guard** | Enforce development guidelines and prevent unsafe actions |
 | **skill-navigator** | Help the agent select appropriate skills for tasks |
 
+#### Deterministic Skill Scripts
 !EDIT! Mention scripts being developed and used
+
+Apart from creating a markdown file describing its skill, OpenClaw often in addition implemented helper scripts for that skill. That is a highly desired behavior, as it turns LLM-heavy trial-and-error approach into fast, deterministic actions. The scripts most often generate a system state report for the agent from a set of CLI calls.
 
 ### Development Contracts
 
@@ -112,7 +118,7 @@ The agent was instructed to follow strict contracts:
 
 We deliberately chose the Raspberry Pi as the target platform because:
 - It's accessible but limited (forces careful resource management)
-- It has real hardware (camera module) for actual robotics applications
+- It integrates real hardware (camera module) for actual robotics applications
 - It requires proper thermal management (no throttling)
 - It demonstrates the agent's ability to handle real-world constraints
 
@@ -124,7 +130,7 @@ A key requirement was that the agent commit its progress to GitHub. This provide
 - Version control for all code changes
 - A clear history of the development process
 - Backup/offsite storage of the project
-- Ability to review the agent's decisions post-hoc
+- Ability to review the agent's decisions after implementation
 
 ---
 
@@ -324,25 +330,24 @@ This became our mantra. Most failures weren't code errors—they were integratio
 
 ## 8. Conclusion
 
-Our experiment demonstrates that **AI agents can successfully develop ROS2 applications on physical hardware** when given appropriate skills, contracts, and constraints. The key insight is that the constraint (ROS2 framework) rather than limiting the agent, actually enabled better engineering by providing clear patterns to follow.
+Our experiment demonstrates that **AI agents can successfully develop ROS2 applications on physical hardware** when given appropriate skills, contracts, and constraints. The key insight is that the constraints (ROS2 framework) rather than limiting the agent, actually enabled better engineering by providing clear patterns to follow.
 
-The model comparisons revealed that **Claude Opus 4.6** was the most effective for this task, though at higher cost. **GLM-5** showed surprising capability at a fraction of the price, making it viable for less critical applications.
+The model comparisons revealed that **Claude Opus 4.6** was the most effective for this task, though at higher cost. **GLM-5** showed surprising capability at a fraction of the price, making it viable for less complex and less critical applications.
 
-Looking forward, the implications for **industrial maintenance** are significant. An agent that can:
+Looking ahead, the implications for **industrial maintenance** are significant. An agent that can:
 - Monitor running systems
 - Write and deploy code
 - Test in simulation before production
 - Report issues proactively
 
-...represents a new paradigm in robotics maintenance. The agent becomes a tireless, knowledgeable assistant that handles the routine work while humans focus on higher-level decisions.
+...represents a new paradigm in robotics maintenance. The agent becomes a tireless, knowledgeable assistant that handles the routine work and cuts problem resolution times.
+
+In our future work we plan to experiment with OpenClaw's system maintanance capabilities of complex ROS2 setups. The desired outcome is a universal set of skills, which allow the agent to efficiently orchestrate and debug any ROS2 system.
 
 ### Future Work
 
-- [ ] Implement the proposed topic remapping fix
-- [ ] Add motion detection pre-filter for efficiency
-- [ ] Enable real email mode with proper SMTP credentials
-- [ ] Test with more complex multi-node architectures
-- [ ] Explore edge deployment scenarios
+- [ ] Tune skills specific for maintanance of industrial ROS2 systems
+- [ ] Explore automatic routing of requests to cheaper models for more deterministic tasks
 
 ---
 
