@@ -22,7 +22,7 @@ We've explored ROS2 application development with OpenClaw. We've run OpenClaw lo
 
 ## 1. The Idea: Agentic Robotics Development
 
-When we first conceptualized using an AI agent with system access for robotics development, we saw a clear opportunity. An agent like OpenClaw with full system access, the ability to execute commands, read/write files, and interact with hardware should be perfectly suited for hardware-related application development and maintenance when instructed correctly.
+When we first conceptualized using an AI agent with system access for robotics development, we saw a clear opportunity. An agent like [OpenClaw](https://github.com/openclaw/openclaw) with full system access, the ability to execute commands, read/write files, and interact with hardware should be perfectly suited for hardware-related application development and maintenance when instructed correctly.
 
 We wanted to test a simple idea:
 
@@ -63,7 +63,7 @@ We followed [this guide](https://ajfisher.me/2026/02/03/openclaw-raspberrypi-how
 We chose Ubuntu over Raspbian OS due to its the native support of ROS2.
 
 We've integrated OpenClaw with Telegram and added it to the group with both of us.
-You can follow [this guide](https://ajfisher.me/2026/02/03/openclaw-raspberrypi-howto/) to set up the integration.
+You can follow [this guide](https://platform.minimax.io/docs/solutions/moltbot) to set up the integration.
 Note, that if you want to add the OpenClaw bot to a group, you need to give it group admin rights. Additionally, you need to tag the bot in each message you want it to read.
 
 We created an account on GitHub for the agent and added one repository as agent workspace and one for this project, both owned by the agent. Set up an SSH key for the agent and it is ready to commit to both repos.
@@ -164,7 +164,7 @@ Thus, we decided to test the development and monitoring of the same ros2 app wit
 
 ## 5. Achieving AI-Powered Camera Surveillance with different models
 
-We tested claude-opus-4.6, kimi-2.5, and glm-5 using the Openrouter API. Our maxime was to get the application running and have the model as system maintainer monitoring application behaviour and system health. The path to get there turned out differently for each model, although every session was started from a prompt like the one above, describing the development goal and giving some high-level directives.
+We tested Claude Opus 4.6, Kimi 2.5, and GLM5 using the Openrouter API. Our maxim was to get the application running and have the model as system maintainer monitoring application behaviour and system health. The path to get there turned out differently for each model, although every session was started from a prompt like the one above, describing the development goal and giving some high-level directives.
 
 #### What was important to us throughout the tests
 Does the agent: 
@@ -180,22 +180,22 @@ Does the agent:
 |-------|------|-----------|------------|---------|
 | **Claude Opus 4.6** | ~$8.00 | Most forward-thinking; excellent reporting; guideline adherence (discover, test, deploy, report); great CLI usage for debugging | Higher cost; did not ask for user feedback in between; forgot to commit in between | Best overall, completed everyting after one prompt |
 | **GLM-5** | ~$2.00 | Understood deployment; tested entire pipeline independently, good at dealing with CLI & system output | Forgot to commit in between; occasionally failed to report back | Best value, strong development & testing |
-| **Kimi k2.5** | ~$3.00 | Step-by-step procedure worked; willing to follow steps | Multiple iterations required; not good at system-level tools & hardware debugging; struggled with hardware discovery | Needs more explicit guidance |
+| **Kimi 2.5** | ~$3.00 | Step-by-step procedure worked; willing to follow steps | Multiple iterations required; not good at system-level tools & hardware debugging; struggled with hardware discovery | Needs more explicit guidance |
 | **Gemini-3-Flash** | ~$2.00 | Step-by-step execution; more willing to follow procedures; good guideline adherence | Process was lengthy; sometimes unclear when returning with results | Good for specific tasks |
 
 ### Key takeaways
 
 **Claude (The Architect):** Claude was the only model that felt "conscious" of our guidelines. It didn't just write code; it checked the environment first. If a system library was missing, it installed it. It produced well-organized code, communicated proactively its decisions and its reports included results of real tests. It was the only one that did not need to be pointed at `camera_ros` package to develop the camera node.
 
-**GLM-5 (The Pragmatic):** For a low price, it developed and deployed the full application, capturing real test images in its testing pipeline. It interpreted our intentions correctly and was able to iterate on its progress, e.g. when encountering errors. For instance, it tried to bypass ROS2 initially, opting for plain Python due to an apparent build error with ros2. Upon redirection, we were impressed by its engineering capabilities, which were reaching Claude for a fraction of the price. It occasionally forgot to report back and hung on long-horizon testing.s
+**GLM5 (The Pragmatic):** For a low price, it developed and deployed the full application, capturing real test images in its testing pipeline. It interpreted our intentions correctly and was able to iterate on its progress, e.g. when encountering errors. For instance, it tried to bypass ROS2 initially, opting for plain Python due to an apparent build error with ros2. Upon redirection, we were impressed by its engineering capabilities, which were reaching Claude for a fraction of the price. It occasionally forgot to report back and hung on long-horizon testing.s
 
 **Guidance for Flash and Kimi:** These less powerful models performed similarly well with clear instructions, but struggled with the interpretation of rather high-level prompts that required to understand both the goal and the available tools without the user pointing it out. Especially Kimi struggled with hardware debugging and discovery and did not understand to combine the user intent with the "system context".
 
 **Logging preferences**: One interesting observation was how different models implemented logging based on the high-level directive:
 | Model | Approach |
 |-------|----------|
-| **Claude 4.6** | One consolidated log file for emails and one for system logs with structured entries |
-| **GLM-5** | Separate files per email + separate logging; more granular but harder to trace |
+| **Claude Opus 4.6** | One consolidated log file for emails and one for system logs with structured entries |
+| **GLM5** | Separate files per email + separate logging; more granular but harder to trace |
 | **Kimi/Gemini** | Varied—sometimes one log, sometimes multiple |
 
 **Version Control & Committing to Git:** No model really used intermediate committing to ensure a version history and the mandatory `docs` folder was used, if so, after the first, "project goal" prompt. No model kept it up to date and the strongest models did not implement this folder at all. Also, mandatory files to update (interface documentation) were only updated in step by step prompting when encouraged to update documentation.  
@@ -213,7 +213,7 @@ Claude running the application for the first time:
 
 Our experiment demonstrates that **AI agents can successfully develop ROS2 applications on physical hardware** when provided with the proper skills, constraints and system access. Rather than limiting the agent, the strict engineering patterns of the ROS2 framework provided the exact structure necessary for autonomous operation. It is remarkable that a standard Raspberry Pi running OpenClaw can effectively host and "educate" such a localized ROS2 specialist by means of a Telegram group chat.
 
-While Claude Opus 4.6 emerged as the most robust architect for complex tasks, the impressing efficiency of GLM 5 proves that agentic SRE is rapidly becoming economically viable for less critical, high volume monitoring.
+While Claude Opus 4.6 emerged as the most robust architect for complex tasks, the impressing efficiency of GLM5 proves that agentic SRE is rapidly becoming economically viable for less critical, high volume monitoring.
 
 At a meta level, this marks a shift from passive monitoring software to a Site Reliability Engineer running directly on the machine. By granting the agent access to the industrial network, we move beyond traditional DevOps into a closed loop cycle of autonomous oversight. This agentic approach offers three distinct advantages:
 
