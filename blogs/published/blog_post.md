@@ -202,7 +202,7 @@ Does the agent:
 | **GLM-5** | Separate files per email + separate logging; more granular but harder to trace |
 | **Kimi/Gemini** | Varied—sometimes one log, sometimes multiple |
 
-**Version Control & Committing to Git:** No model really used intermediate committing to ensure a version history and the mandatory `docs` folder was used, if so, after the first, "project goal" prompt. No model kept it up to date and the strongest models did not implement this folder at all.
+**Version Control & Committing to Git:** No model really used intermediate committing to ensure a version history and the mandatory `docs` folder was used, if so, after the first, "project goal" prompt. No model kept it up to date and the strongest models did not implement this folder at all. Also, mandatory files to update (interface documentation) were only updated in step by step prompting when encouraged to update documentation.  
 
 **Documentation:** Only Claude and GLM5 implemented README files to document the application usage. Claude's readme is far more detailed.
 
