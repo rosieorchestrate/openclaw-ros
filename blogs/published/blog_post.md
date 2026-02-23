@@ -191,23 +191,36 @@ Does the agent:
 
 **Guidance for Flash and Kimi:** These less powerful models performed similarly well with clear instructions, but struggled with the interpretation of rather high-level prompts that required to understand both the goal and the available tools without the user pointing it out. Especially Kimi struggled with hardware debugging and discovery and did not understand to combine the user intent with the "system context".
 
-**Logging preferences**: One interesting observation was how different models implemented logging based on the high-level directive:
-| Model | Approach |
-|-------|----------|
-| **Claude Opus 4.6** | One consolidated log file for emails and one for system logs with structured entries |
-| **GLM5** | Separate files per email + separate logging; more granular but harder to trace |
-| **Kimi/Gemini** | Varied—sometimes one log, sometimes multiple |
-
 **Version Control & Committing to Git:** No model really used intermediate committing to ensure a version history and the mandatory `docs` folder was used, if so, after the first, "project goal" prompt. No model kept it up to date and the strongest models did not implement this folder at all. Also, mandatory files to update (interface documentation) were only updated in step by step prompting when encouraged to update documentation.  
 
 **Documentation:** Only Claude and GLM5 implemented README files to document the application usage. Claude's readme is far more detailed.
-
 
 Claude running the application for the first time:
 | ![First app run by claude](../assets/claude_app_run_tel.png) | ![First app run by claude](../assets/claude_app_debug_tel.png) | ![Claude successfully debugs and deploys app](../assets/claude_app_success_tel.png) |
 | :---: | :---: | :---: |
 
----
+
+### Implementation Patterns Across Models
+
+**Architecture Choices:**
+- Claude designed the most modular system with 4 separate nodes, including a dedicated throttling node to decouple camera frame rate from detection rate. This separation of concerns made the system easier to debug and extend.
+- GLM5 built a lean 2-node system with graceful degradation—if MediaPipe failed to load, it automatically fell back to Haar cascade detection.
+- Gemini produced the simplest working solution but with hardcoded paths and no fallback mechanisms.
+
+**Deployment**
+- Claude implemented staggered node startup (camera first, then capture after 3s, then detection after 5s) to handle initialization dependencies, a pattern common in production ROS systems.
+- GLM5 created the most configurable launch file with 8 runtime parameters, allowing tuning without code changes.
+- Gemini's launch file started all nodes simultaneously with minimal parameters.
+
+**Logging & Observability:**
+- Claude logged to date-partitioned files (`alerts_2026-02-20.log`) plus machine-readable JSONL, tracking metrics like inference time and suppressed alert counts.
+- GLM5 created individual email files per detection event—more granular but harder to trace across sessions.
+- Gemini used a single consolidated log file with plain text output.
+
+**Code Quality Signals:**
+- Claude included type hints, docstrings, QoS profiles for sensor reliability, and prepared hooks for real email sending (`mock_mode` parameter).
+- GLM5 used modern Python idioms (`pathlib`, comprehensive docstrings) and defensive programming with explicit fallbacks.
+- Gemini wrote procedural, inline code that worked but lacked abstraction or error recovery.
 
 ## 6. Conclusion: A Paradigm Shift for Industrial SRE
 
