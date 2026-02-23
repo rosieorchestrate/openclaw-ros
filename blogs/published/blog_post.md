@@ -213,26 +213,6 @@ Claude running the application for the first time:
 
 ---
 
-## 6. Paradigm shift for (industrial) SRE
-
-At the meta level, our openclaw agent can be seen as a system-aware "site reliability engineer" running directly on the machine. By giving an agent access to our "industrial network", we enabled a closed-loop cycle of development and oversight. Our experiment demonstrates that an agent with:
-
-- **Proper formation** (skills, contracts)
-- **System access** (file system, process management)
-- **Framework constraints** (ROS2 node structure)
-- **Monitoring capabilities** (health checks, logging)
-- **Execution permissions** (can run software, install packages)
-
-...can successfully develop and maintain robotics applications. We deem this highly relevant for industrial environments where such a specialized system can be of immense benefit to proactively analyze and fix problems at runtime. The agentic system offers:
-
-- **Adaptive Monitoring & Reporting:** Instead of fixed logging systems, agens implement additional logging to monitor certain anomalies and ensure all information necessary is logged for the responsible maintainer.
-- **Active Recovery:** Unlike passive alerts, agents understand the context of critical logs and can take action to resolve issues before causing downtime.
-- **Rapid Iteration:** Upon identified issues, agents can implement fixes and test without human intervention (within bounds)
-
-Clearly, setting up the right environment (guardrails, skills, permissions, interaction protocols) is key to this, which is critical for any agentic system right now to be used in production, and not an easy task. Still, we see high potential in defining a strict action process for the agent to follow, which should be based on sandboxed evolution: First, developing and testing in a shadow environment, then validating and deploying to production, finally monitoring and reporting. This creates a closed-loop cycle where the agent can improve on itself. Of course, the degree of autonomy and execution permission must be strongly supervised and dependent on the environment the agent is deployed. 
-
----
-
 ## 8. Conclusion: A Paradigm Shift for Industrial SRE
 
 Our experiment demonstrates that **AI agents can successfully develop ROS2 applications on physical hardware** when given appropriate skills, constraints and context through system access. Crucially, the ROS2 framework did not limit the agent; instead, it provided the clear engineering patterns necessary for autonomous operation.
