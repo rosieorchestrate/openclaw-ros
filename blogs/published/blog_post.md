@@ -233,19 +233,21 @@ Clearly, setting up the right environment (guardrails, skills, permissions, inte
 
 ---
 
-## 8. Conclusion
+## 8. Conclusion: A Paradigm Shift for Industrial SRE
 
-Our experiment demonstrates that **AI agents can successfully develop ROS2 applications on physical hardware** when given appropriate skills, contracts, and constraints. The key insight is that the constraints (ROS2 framework) rather than limiting the agent, actually enabled better engineering by providing clear patterns to follow.
+Our experiment demonstrates that **AI agents can successfully develop ROS2 applications on physical hardware** when given appropriate skills, constraints and context through system access. Crucially, the ROS2 framework did not limit the agent; instead, it provided the clear engineering patterns necessary for autonomous operation.
 
-The model comparisons revealed that **Claude Opus 4.6** was the most effective for this task, though at higher cost. **GLM-5** showed surprising capability at a fraction of the price, making it viable for less complex and less critical applications.
+While **Claude Opus 4.6** emerged as the most robust architect for these complex tasks, the surprising efficiency of **GLM-5** suggests that agentic SRE is becoming economically viable for less critical, high-volume monitoring tasks.
 
-Looking ahead, the implications for **industrial maintenance** are significant. An agent that can:
-- Monitor running systems
-- Write and deploy code
-- Test in simulation before production
-- Report issues proactively
+At a meta level, this marks a shift from passive software to a system aware Site Reliability Engineer running directly on the machine. By granting the agent access to the industrial network, we move beyond traditional DevOps into a closed loop cycle of autonomous oversight. This agentic approach offers three distinct advantages:
 
-In our future work we plan to experiment with OpenClaw's system maintanance capabilities of complex ROS2 setups. The desired outcome is a universal set of skills, which allow the agent to efficiently orchestrate and debug any ROS2 system.
+- **Adaptive Monitoring:** Instead of static thresholds, the agent implements custom logging on the fly to capture specific anomalies, ensuring maintainers receive context rich data.
+
+- **Active Recovery:** The agent understands the context of critical logs and can execute recovery protocols, such as restarting nodes, before downtime occurs.
+
+- **Sandboxed Evolution:** By following a strict "shadow environment" protocol (developing in simulation, validating in a sandbox, and only then deploying to production) the agent creates a self-improving loop that minimizes risk.
+
+Setting up the right environment (guardrails, skills, permissions, interaction protocols) is critical for any production agentic system and represents a significant technical hurdle right now. Nevertheless, as model capabilities increase and token prices fall, we see high potential in such closed-loop agentic applications in hardware-related environments. Our future work will focus on expanding OpenClaw's abilities to maintain and interface with complex ROS applications. 
 
 ### Future Work
 
