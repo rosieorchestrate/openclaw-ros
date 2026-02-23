@@ -60,7 +60,7 @@ We used Raspberry Pi 5 with 4 GB of RAM for our experiments.
 Both OpenClaw agent and the ROS2 applications were running on the device.
 
 We followed [this guide](https://ajfisher.me/2026/02/03/openclaw-raspberrypi-howto/) to run OpenClaw on Ubuntu on Raspberry Pi.
-We chose Ubuntu over Raspbian OS due to its the native support of ROS2.
+We chose Ubuntu over Raspbian OS due to its native support of ROS2.
 
 We've integrated OpenClaw with Telegram and added it to the group with both of us.
 You can follow [this guide](https://platform.minimax.io/docs/solutions/moltbot) to set up the integration.
@@ -164,7 +164,7 @@ Thus, we decided to test the development and monitoring of the same ros2 app wit
 
 ## 5. Achieving AI-Powered Camera Surveillance with different models
 
-We tested Claude Opus 4.6, Kimi 2.5, and GLM5 using the Openrouter API. Our maxim was to get the application running and have the model as system maintainer monitoring application behaviour and system health. The path to get there turned out differently for each model, although every session was started from a prompt like the one above, describing the development goal and giving some high-level directives.
+Using the OpenRouter API, we put Claude Opus 4.6, Kimi 2.5, and GLM5 to the test. Our goal was clear: get the application up and running, and task the AI with monitoring system health and behavior as a virtual maintainer. Even though we kicked off every session with the same starting prompt detailing our objectives, the journey to that final setup varied from model to model.
 
 #### What was important to us throughout the tests
 Does the agent: 
@@ -178,16 +178,16 @@ Does the agent:
 
 | Model | Cost | Strengths | Weaknesses | Verdict |
 |-------|------|-----------|------------|---------|
-| **Claude Opus 4.6** | ~$8.00 | Most forward-thinking; excellent reporting; guideline adherence (discover, test, deploy, report); great CLI usage for debugging | Higher cost; did not ask for user feedback in between; forgot to commit in between | Best overall, completed everyting after one prompt |
+| **Claude Opus 4.6** | ~$8.00 | Most forward-thinking; excellent reporting; guideline adherence (discover, test, deploy, report); great CLI usage for debugging | Higher cost; did not ask for user feedback in between; forgot to commit in between | Best overall, completed everything after one prompt |
 | **GLM-5** | ~$2.00 | Understood deployment; tested entire pipeline independently, good at dealing with CLI & system output | Forgot to commit in between; occasionally failed to report back | Best value, strong development & testing |
 | **Kimi 2.5** | ~$3.00 | Step-by-step procedure worked; willing to follow steps | Multiple iterations required; not good at system-level tools & hardware debugging; struggled with hardware discovery | Needs more explicit guidance |
 | **Gemini-3-Flash** | ~$2.00 | Step-by-step execution; more willing to follow procedures; good guideline adherence | Process was lengthy; sometimes unclear when returning with results | Good for specific tasks |
 
-### Key takeaways
+### Key Takeaways
 
 **Claude (The Architect):** Claude was the only model that felt "conscious" of our guidelines. It didn't just write code; it checked the environment first. If a system library was missing, it installed it. It produced well-organized code, communicated proactively its decisions and its reports included results of real tests. It was the only one that did not need to be pointed at `camera_ros` package to develop the camera node.
 
-**GLM5 (The Pragmatic):** For a low price, it developed and deployed the full application, capturing real test images in its testing pipeline. It interpreted our intentions correctly and was able to iterate on its progress, e.g. when encountering errors. For instance, it tried to bypass ROS2 initially, opting for plain Python due to an apparent build error with ros2. Upon redirection, we were impressed by its engineering capabilities, which were reaching Claude for a fraction of the price. It occasionally forgot to report back and hung on long-horizon testing.s
+**GLM5 (The Pragmatic):** For a low price, it developed and deployed the full application, capturing real test images in its testing pipeline. It interpreted our intentions correctly and was able to iterate on its progress, e.g. when encountering errors. For instance, it tried to bypass ROS2 initially, opting for plain Python due to an apparent build error with ros2. Upon redirection, we were impressed by its engineering capabilities, which were reaching Claude for a fraction of the price. It occasionally forgot to report back and hung on long-horizon testing.
 
 **Guidance for Flash and Kimi:** These less powerful models performed similarly well with clear instructions, but struggled with the interpretation of rather high-level prompts that required to understand both the goal and the available tools without the user pointing it out. Especially Kimi struggled with hardware debugging and discovery and did not understand to combine the user intent with the "system context".
 
@@ -204,7 +204,7 @@ Does the agent:
 
 
 Claude running the application for the first time:
-| ![First app run by claude](../assets/claude_app_run_tel.png) | ![First app run by claude](../assets/claude_app_debug_tel.png) | ![Claude successfully debugs and deployes app](../assets/claude_app_success_tel.png) |
+| ![First app run by claude](../assets/claude_app_run_tel.png) | ![First app run by claude](../assets/claude_app_debug_tel.png) | ![Claude successfully debugs and deploys app](../assets/claude_app_success_tel.png) |
 | :---: | :---: | :---: |
 
 ---
