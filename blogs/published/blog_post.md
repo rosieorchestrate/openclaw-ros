@@ -6,8 +6,6 @@
 **Date:** February 2026  
 **Project Repository:** [openclaw/openclaw-ros](https://github.com/openclaw/openclaw-ros)
 
----
-
 ## TL;DR
 We've explored ROS2 application development with OpenClaw. We've run OpenClaw locally on 4 GB Raspberry pi 5 and compared performance of various LLM models. The LLMs were asked to develop a simple ROS2 application with real hardware involvement. Ultimately, we found that OpenClaw is a powerful tool for development of hardware-related applications with high potential in maintenance and monitoring of industrial systems. Claude Opus 4.6 was the best performing model for the tasks at hand while GLM5 surprised with strong reasoning in debugging and testing ROS2 applications.
 
