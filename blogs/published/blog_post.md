@@ -12,13 +12,11 @@ We've explored ROS2 application development with OpenClaw. We've run OpenClaw lo
 ## Table of Contents
 
 1. [The Idea: Agentic Robotics Development](#1-the-idea-agentic-robotics-development)
-2. [The Final Goal](#2-the-final-goal)
-3. [How We Did It: Skills, Contracts, and Raspberry Pi](#3-how-we-did-it-skills-contracts-and-raspberry-pi)
-4. [The Journey: Chronological Development](#4-the-journey-chronological-development)
-5. [Results: Model Comparison](#5-results-model-comparison)
-6. [Implications for Industrial Maintenance](#6-implications-for-industrial-maintenance)
-7. [Lessons Learned](#7-lessons-learned)
-8. [Conclusion](#8-conclusion)
+2. [The Setup](#2-the-setup)
+3. [Educating OpenClaw: Skills and Contracts](#3-educating-openclaw-skills-and-contracts)
+4. [The Learning Journey: From Blinking LEDs to Autonomous Vision](#4-the-learning-journey-from-blinking-leds-to-autonomous-vision)
+5. [Achieving AI-Powered Camera Surveillance with different models](#5-achieving-ai-powered-camera-surveillance-with-different-models)
+6. [Conclusion: A Paradigm Shift for Industrial SRE](#6-conclusion-a-paradigm-shift-for-industrial-sre)
 
 ---
 
@@ -211,7 +209,7 @@ Claude running the application for the first time:
 
 ---
 
-## 8. Conclusion: A Paradigm Shift for Industrial SRE
+## 6. Conclusion: A Paradigm Shift for Industrial SRE
 
 Our experiment demonstrates that **AI agents can successfully develop ROS2 applications on physical hardware** when provided with the proper skills, constraints and system access. Rather than limiting the agent, the strict engineering patterns of the ROS2 framework provided the exact structure necessary for autonomous operation. It is remarkable that a standard Raspberry Pi running OpenClaw can effectively host and "educate" such a localized ROS2 specialist by means of a Telegram group chat.
 
