@@ -7,7 +7,7 @@
 **Project Repository:** [openclaw/openclaw-ros](https://github.com/openclaw/openclaw-ros)
 
 ## TL;DR
-We've explored ROS2 application development with OpenClaw. We've run OpenClaw locally on 4 GB Raspberry pi 5 and compared performance of various LLM models. The LLMs were asked to develop a simple ROS2 application with real hardware involvement. Ultimately, we found that OpenClaw is a powerful tool for development of hardware-related applications with high potential in maintenance and monitoring of industrial systems. Claude Opus 4.6 was the best performing model for the tasks at hand while GLM5 surprised with strong reasoning in debugging and testing ROS2 applications.
+We tested whether AI agents can develop ROS2 applications on a Raspberry Pi 5 with minimal guidance. Claude Opus 4.6 performed best overall; GLM5 offered impressive value at a quarter of the cost.
 
 ## Table of Contents
 
@@ -22,7 +22,7 @@ We've explored ROS2 application development with OpenClaw. We've run OpenClaw lo
 
 ## 1. The Idea: Agentic Robotics Development
 
-When we first conceptualized using an AI agent with system access for robotics development, we saw a clear opportunity. An agent like [OpenClaw](https://github.com/openclaw/openclaw) with full system access, the ability to execute commands, read/write files, and interact with hardware should be perfectly suited for hardware-related application development and maintenance when instructed correctly.
+An AI agent with full system access—able to execute commands, read/write files, and interact with hardware—seems like a natural fit for robotics development. [OpenClaw](https://github.com/openclaw/openclaw) gave us exactly that.
 
 We wanted to test a simple idea:
 
@@ -42,7 +42,7 @@ The agent (OpenClaw) had full system access: it could execute shell commands, ed
 - Monitor and report system status  
 - Keep the project structured and reproducible  
 
-We were not ROS2 experts. That was intentional. Our prompts were high-level and sometimes imprecise. The agent had to figure out how to translate high-level prompt into correct ROS2 structure and working code, and report to us its results.
+We were not ROS2 experts—intentionally. Our prompts were high-level and sometimes imprecise. The agent had to translate vague instructions into working ROS2 code and report back.
 
 ## 2. The Setup
 
@@ -96,7 +96,7 @@ We developed a suite of specialized skills that guided the agent's behavior:
 | **ros2-contract-guard** | Enforce development contracts and prevent unsafe actions |
 | **skill-navigator** | Help the agent select appropriate skills for tasks |
 
-Apart from creating a markdown file describing its skill, OpenClaw often in addition implemented helper scripts for that skill. That is a highly desired behavior, as it turns LLM-heavy trial-and-error approach into fast, deterministic actions. The scripts most often generate a system state report for the agent from a set of CLI calls.
+Beyond the skill descriptions, OpenClaw often implemented helper scripts turning LLM-heavy trial-and-error into fast, deterministic actions. These scripts typically generate system state reports from CLI calls.
 
 ### Development Contracts
 
@@ -111,7 +111,7 @@ The agent was instructed to follow strict contracts:
 
 ## 4. The Learning Journey: From Blinking LEDs to Autonomous Vision
 
-Our journey with OpenClaw agents wasn't just about building an app; it was about teaching an AI to "think" like a robotics engineer—discovering hardware, navigating middleware, and debugging silent failures.
+This journey wasn't just about building a ROS2 application with AI, it was about teaching an agent to think like a robotics engineer and produce structured code and output to high-level inputs.
 
 ### Our "Hello World" with ROS2
 
@@ -123,7 +123,7 @@ Eventually, we got the LED to blink. It was time for our "Hello World" with ROS2
 
 > **Prompt:** The goal is to have a talker that sends 'hello [timestamp]' messages randomly every 0.5 to 3 seconds and a listener that subscribes to this talker, logs into a file in the Project folder "[timestamp] message", and lets the LED blink for 0.3 seconds. Think of the components you will need and use your skills to develop this project. Once you are done creating, provide a detailed log on the changes you have made.
 
-We then asked the agent to add a further node that outputs the topic messages to the terminal. It was cool to see how the agent made use of its developing and engineering "skills" for this, as you can see in the structured response message we received.
+We then asked the agent to add a node that outputs topic messages to the terminal. The agent leveraged its "skills" effectively, as shown in the structured response below.
 
 ![Structured response from the agent showing terminal output](../assets/screenshot_terminal_listener_response.png)
 
@@ -149,13 +149,13 @@ Note how the agent adheres to the implementation guidelines and contracts, imple
 
 
 
-It was also quite cool how the agent communicated and managed upcoming problems such as when it ran into problems when deploying the YoloV8n model and autonomously switched to MediaPipe to make person detection work.
+Notably, when YoloV8n deployment failed, the agent autonomously switched to MediaPipe to get person detection working.
 | ![Plan B: MediaPipe person detection](../assets/plan_b_media_pipe_tel.png) | ![MediaPipe generic update](../assets/media_pipe_update_tel.png) |
 | :---: | :---: |
 
 
 **Some key learnings from this phase:**
-- The ability of the agent to follow development steps and conduct thorough testing via local code execution impressed us. At its best moments, it really behaved like a seasoned engineer with hardware experience.
+- The agent's ability to follow development steps and test via local code execution impressed us. At its best, it behaved like a seasoned hardware engineer.
 - Session context: While the context was useful when working on the same project, it turned out to be a nightmare when we had several projects in the same session (without using /new command from openclaw). Gemini-3-Flash started mixing up the projects, e.g. logging into other projects, using custom nodes from other projects instead of recreating them, etc. At some point, we ran into a state where the ros2 application could not be deployed anymore due to wrong launch configurations and the agent started to create wild deployment strategies for the project, making the folder completely useless.
 - Gemini-3-Flash has not enough reasoning capabilities to drive such projects end-to-end. While it became good at testing the current status and asking for feedback, it usually forgot commiting to git, updating decision documentation, etc. Also, the quality of the tests was varied, requiring detailed questioning and retesting before we could have a good picture of the current status.
 
@@ -213,9 +213,9 @@ Claude running the application for the first time:
 
 Our experiment demonstrates that **AI agents can successfully develop ROS2 applications on physical hardware** when provided with the proper skills, constraints and system access. Rather than limiting the agent, the strict engineering patterns of the ROS2 framework provided the exact structure necessary for autonomous operation. It is remarkable that a standard Raspberry Pi running OpenClaw can effectively host and "educate" such a localized ROS2 specialist by means of a Telegram group chat.
 
-While Claude Opus 4.6 emerged as the most robust architect for complex tasks, the impressing efficiency of GLM5 proves that agentic SRE is rapidly becoming economically viable for less critical, high volume monitoring.
+While Claude Opus 4.6 emerged as the most robust architect for complex tasks, the impressive efficiency of GLM5 proves that agentic SRE is becoming economically viable for less critical, high-volume monitoring.
 
-At a meta level, this marks a shift from passive monitoring software to a Site Reliability Engineer running directly on the machine. By granting the agent access to the industrial network, we move beyond traditional DevOps into a closed loop cycle of autonomous oversight. This agentic approach offers three distinct advantages:
+This marks a shift: from passive monitoring software to an SRE running directly on the machine. By granting the agent access to the ROS environment, we move beyond traditional DevOps into closed-loop autonomous oversight. Three key advantages:
 
 - **Adaptive Monitoring:** Instead of static thresholds, the agent implements custom logging on the fly to capture specific anomalies, ensuring maintainers receive context rich data.
 
@@ -223,7 +223,7 @@ At a meta level, this marks a shift from passive monitoring software to a Site R
 
 - **Sandboxed Evolution:** By following a strict "shadow environment" protocol (developing in simulation, validating in a sandbox, and only then deploying to production) the agent creates a self-improving loop that minimizes risk.
 
-Setting up the right environment (guardrails, skills, permissions, interaction protocols) is critical for any production agentic system and represents a significant technical hurdle right now. Nevertheless, as model capabilities increase and token prices fall, the potential of closed loop agentic applications in hardware related environments is undeniable. Our future work will build upon this foundation, expanding the capacity of OpenClaw to maintain and interface with increasingly complex ROS applications.
+Setting up the right environment (guardrails, skills, permissions, interaction protocols) remains a significant hurdle. But as model capabilities increase and token prices fall, the potential for closed-loop agentic systems in hardware environments is undeniable. Next up: Expand the capacity of OpenClaw to maintain and interface with increasingly complex ROS2 applications.
 
 ---
 
