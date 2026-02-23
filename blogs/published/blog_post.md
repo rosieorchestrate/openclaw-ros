@@ -215,11 +215,11 @@ Claude running the application for the first time:
 
 ## 8. Conclusion: A Paradigm Shift for Industrial SRE
 
-Our experiment demonstrates that **AI agents can successfully develop ROS2 applications on physical hardware** when given appropriate skills, constraints and context through system access. Crucially, the ROS2 framework did not limit the agent; instead, it provided the clear engineering patterns necessary for autonomous operation.
+Our experiment demonstrates that **AI agents can successfully develop ROS2 applications on physical hardware** when provided with the proper skills, constraints and system access. Rather than limiting the agent, the strict engineering patterns of the ROS2 framework provided the exact structure necessary for autonomous operation. It is remarkable that a standard Raspberry Pi running OpenClaw can effectively host and "educate" such a localized ROS2 specialist by means of a Telegram group chat.
 
-While **Claude Opus 4.6** emerged as the most robust architect for these complex tasks, the surprising efficiency of **GLM-5** suggests that agentic SRE is becoming economically viable for less critical, high-volume monitoring tasks.
+While Claude Opus 4.6 emerged as the most robust architect for complex tasks, the impressing efficiency of GLM 5 proves that agentic SRE is rapidly becoming economically viable for less critical, high volume monitoring.
 
-At a meta level, this marks a shift from passive software to a system aware Site Reliability Engineer running directly on the machine. By granting the agent access to the industrial network, we move beyond traditional DevOps into a closed loop cycle of autonomous oversight. This agentic approach offers three distinct advantages:
+At a meta level, this marks a shift from passive monitoring software to a Site Reliability Engineer running directly on the machine. By granting the agent access to the industrial network, we move beyond traditional DevOps into a closed loop cycle of autonomous oversight. This agentic approach offers three distinct advantages:
 
 - **Adaptive Monitoring:** Instead of static thresholds, the agent implements custom logging on the fly to capture specific anomalies, ensuring maintainers receive context rich data.
 
@@ -227,12 +227,7 @@ At a meta level, this marks a shift from passive software to a system aware Site
 
 - **Sandboxed Evolution:** By following a strict "shadow environment" protocol (developing in simulation, validating in a sandbox, and only then deploying to production) the agent creates a self-improving loop that minimizes risk.
 
-Setting up the right environment (guardrails, skills, permissions, interaction protocols) is critical for any production agentic system and represents a significant technical hurdle right now. Nevertheless, as model capabilities increase and token prices fall, we see high potential in such closed-loop agentic applications in hardware-related environments. Our future work will focus on expanding OpenClaw's abilities to maintain and interface with complex ROS applications. 
-
-### Future Work
-
-- Tune skills specific for maintanance of industrial ROS2 systems
-- Explore automatic routing of requests to cheaper models for more deterministic tasks
+Setting up the right environment (guardrails, skills, permissions, interaction protocols) is critical for any production agentic system and represents a significant technical hurdle right now. Nevertheless, as model capabilities increase and token prices fall, the potential of closed loop agentic applications in hardware related environments is undeniable. Our future work will build upon this foundation, expanding the capacity of OpenClaw to maintain and interface with increasingly complex ROS applications.
 
 ---
 
