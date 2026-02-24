@@ -64,7 +64,7 @@ We've integrated OpenClaw with Telegram and added it to the group with both of u
 You can follow [this guide](https://platform.minimax.io/docs/solutions/moltbot) to set up the integration.
 Note, that if you want to add the OpenClaw bot to a group, you need to give it group admin rights. Additionally, you need to tag the bot in each message you want it to read.
 
-We created an account on GitHub for the agent and added one repository as agent workspace and one for this project, both owned by the agent. Set up an SSH key for the agent and it is ready to commit to both repos.
+We created an account on GitHub for the agent and added one repository as agent workspace and one for this project. Set up an SSH key for the agent and it is ready to commit to both repos.
 
 #### 2. ROS2 
 
