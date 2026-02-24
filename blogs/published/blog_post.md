@@ -44,7 +44,7 @@ The agent (OpenClaw) had full system access: it could execute shell commands, ed
 
 We were not ROS2 experts, intentionally. Our prompts were high-level and sometimes imprecise. The agent had to translate vague instructions into working ROS2 code and report back.
 
-## 2. The Setup
+## 2. Getting Started: The Setup
 
 We deliberately chose the Raspberry Pi as the target platform because:
 - It's accessible but limited (forces careful resource management)
@@ -154,10 +154,10 @@ Notably, when YoloV8n deployment failed, the agent autonomously switched to Medi
 
 **Some key learnings from this phase:**
 - The agent's ability to follow development steps and test via local code execution impressed us. At its best, it behaved like a seasoned hardware engineer.
-- Session context: While the context was useful when working on the same project, it turned out to be a nightmare when we had several projects in the same session (without using /new command from openclaw). Gemini-3-Flash started mixing up the projects, e.g. logging into other projects, using custom nodes from other projects instead of recreating them, etc. At some point, we ran into a state where the ros2 application could not be deployed anymore due to wrong launch configurations and the agent started to create wild deployment strategies for the project, making the folder completely useless.
+- Session context: While the context was useful when working on the same project, it turned out to be a nightmare when we had several projects in the same session (without using /new command from openclaw). Gemini-3-Flash started mixing up the projects, e.g. logging into other projects, using custom nodes from other projects instead of recreating them, etc. At some point, we ran into a state where the ROS2 application could not be deployed anymore due to wrong launch configurations and the agent started to create wild deployment strategies for the project, making the folder completely useless.
 - Gemini-3-Flash has not enough reasoning capabilities to drive such projects end-to-end. While it became good at testing the current status and asking for feedback, it usually forgot commiting to git, updating decision documentation, etc. Also, the quality of the tests was varied, requiring detailed questioning and retesting before we could have a good picture of the current status.
 
-Thus, we decided to test the development and monitoring of the same ros2 app with different models.
+Thus, we decided to test the development and monitoring of the same ROS2 app with different models.
 
 
 ## 5. Achieving AI-Powered Camera Surveillance with different models
@@ -179,17 +179,17 @@ Does the agent:
 | **Claude Opus 4.6** | ~$8.00 | Most forward-thinking; excellent reporting; guideline adherence (discover, test, deploy, report); great CLI usage for debugging | Higher cost; did not ask for user feedback in between; forgot to commit in between | Best overall, completed everything after one prompt |
 | **GLM-5** | ~$2.00 | Understood deployment; tested entire pipeline independently, good at dealing with CLI & system output | Forgot to commit in between; occasionally failed to report back | Best value, strong development & testing |
 | **Kimi 2.5** | ~$3.00 | Step-by-step procedure worked; willing to follow steps | Multiple iterations required; not good at system-level tools & hardware debugging; struggled with hardware discovery | Needs more explicit guidance |
-| **Gemini-3-Flash** | ~$2.00 | Step-by-step execution; more willing to follow procedures; good guideline adherence | Process was lengthy; sometimes unclear when returning with results | Good for specific tasks |
+| **Gemini-3-Flash** | ~$2.00 | Step-by-step execution; more willing to follow procedures; good guideline adherence | Process was lengthy and multiple steps needed; sometimes unclear when returning with results | Good for specific tasks |
 
 ### Key Takeaways
 
 **Claude (The Architect):** Claude was the only model that felt "conscious" of our guidelines. It didn't just write code; it checked the environment first. If a system library was missing, it installed it. It produced well-organized code, communicated proactively its decisions and its reports included results of real tests. It was the only one that did not need to be pointed at `camera_ros` package to develop the camera node.
 
-**GLM5 (The Pragmatic):** For a low price, it developed and deployed the full application, capturing real test images in its testing pipeline. It interpreted our intentions correctly and was able to iterate on its progress, e.g. when encountering errors. For instance, it tried to bypass ROS2 initially, opting for plain Python due to an apparent build error with ros2. Upon redirection, we were impressed by its engineering capabilities, which were reaching Claude for a fraction of the price. It occasionally forgot to report back and hung on long-horizon testing.
+**GLM5 (The Pragmatic):** For a low price, it developed and deployed the full application, capturing real images in its testing pipeline. It interpreted our intentions correctly and was able to iterate on its progress, e.g. when encountering errors. For instance, it tried to bypass ROS2 initially, opting for plain Python due to an apparent build error with ROS2. Upon redirection, we were impressed by its engineering capabilities, which were reaching Claude for a fraction of the price. It occasionally forgot to report back and hung on long-horizon testing.
 
-**Guidance for Flash and Kimi:** These less powerful models performed similarly well with clear instructions, but struggled with the interpretation of rather high-level prompts that required to understand both the goal and the available tools without the user pointing it out. Especially Kimi struggled with hardware debugging and discovery and did not understand to combine the user intent with the "system context".
+**Guidance for Flash and Kimi:** These less powerful models performed similarly well with clear instructions, but struggled with the interpretation of high-level prompts that required to understand both the goal and the available tools without the user pointing it out. Especially Kimi struggled with hardware debugging and discovery and did not understand to combine the user intent with the "system context".
 
-**Version Control & Committing to Git:** No model really used intermediate committing to ensure a version history and the mandatory `docs` folder was used, if so, after the first, "project goal" prompt. No model kept it up to date and the strongest models did not implement this folder at all. Also, mandatory files to update (interface documentation) were only updated in step by step prompting when encouraged to update documentation.  
+**Version Control & Committing to Git:** No model really used intermediate committing to ensure a version history and the mandatory `docs` folder was used, if so, after the first, "project goal" prompt. No model kept it up to date and the strongest models did not implement this folder at all. Also, mandatory files to update (interface documentation) were only modified when encouraged step-by-step to do so.
 
 **Documentation:** Only Claude and GLM5 implemented README files to document the application usage. Claude's readme is far more detailed.
 
@@ -199,17 +199,17 @@ Claude running the application for the first time:
 
 ## 6. Conclusion: A Paradigm Shift for Industrial SRE
 
-Our experiment demonstrates that **AI agents can successfully develop ROS2 applications on physical hardware** when provided with the proper skills, constraints and system access. Rather than limiting the agent, the strict engineering patterns of the ROS2 framework provided the exact structure necessary for autonomous operation. It is remarkable that a standard Raspberry Pi running OpenClaw can effectively host and "educate" such a localized ROS2 specialist by means of a Telegram group chat.
+Our experiment demonstrates that **modern AI agents such as OpenClaw can successfully develop applications on hardware** when provided with the proper skills, constraints and system access. Rather than limiting the agent, the strict engineering patterns of the ROS2 framework provided the exact structure necessary for autonomous operation. It is remarkable that a standard Raspberry Pi running OpenClaw can effectively host and "educate" a ROS2 specialist by means of a Telegram group chat.
 
 While Claude Opus 4.6 emerged as the most robust architect for complex tasks, the impressive efficiency of GLM5 proves that agentic SRE is becoming economically viable for less critical, high-volume monitoring.
 
-This marks a shift: from passive monitoring software to an SRE running directly on the machine. By granting the agent access to the ROS environment, we move beyond traditional DevOps into closed-loop autonomous oversight. Three key advantages:
+This marks a shift: from passive monitoring software to an SRE running directly on the machine. By granting the agent access to the ROS environment, we move beyond traditional DevOps into closed-loop autonomous oversight. Three key advantages of this setup:
 
 - **Adaptive Monitoring:** Instead of static thresholds, the agent implements custom logging on the fly to capture specific anomalies, ensuring maintainers receive context rich data.
 
 - **Active Recovery:** The agent understands the context of critical logs and can execute recovery protocols, such as restarting nodes, before downtime occurs.
 
-- **Sandboxed Evolution:** By following a strict "shadow environment" protocol (developing in simulation, validating in a sandbox, and only then deploying to production) the agent creates a self-improving loop that minimizes risk.
+- **Sandboxed Evolution:** When using a strict "shadow environment" protocol (developing in simulation, validating in a sandbox, and only then deploying to production) the agent creates a self-improving loop that minimizes risk.
 
 Setting up the right environment (guardrails, skills, permissions, interaction protocols) remains a significant hurdle. But as model capabilities increase and token prices fall, the potential for closed-loop agentic systems in hardware environments is undeniable. Next up: Expand the capacity of OpenClaw to maintain and interface with increasingly complex ROS2 applications.
 
