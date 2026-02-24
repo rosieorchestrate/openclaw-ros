@@ -7,7 +7,7 @@
 **Project Repository:** [openclaw/openclaw-ros](https://github.com/openclaw/openclaw-ros)
 
 ## TL;DR
-We tested whether AI agents can develop ROS2 applications on a Raspberry Pi 5 with minimal guidance. Claude Opus 4.6 performed best overall; GLM5 offered impressive value at a quarter of the cost.
+We've explored hardware-related software development with OpenClaw on a Raspberry Pi 4 and compared performance of various LLM models. The models were tasked with building a simple ROS2 app using hardware connected to the Pi. Ultimately, OpenClaw proved to be a powerhouse for building these applications, showing huge potential for industrial maintenance and monitoring. While Claude Opus 4.6 performed the best overall, GLM5 delivered impressive value at just a quarter of the cost.
 
 ## Table of Contents
 
@@ -42,7 +42,7 @@ The agent (OpenClaw) had full system access: it could execute shell commands, ed
 - Monitor and report system status  
 - Keep the project structured and reproducible  
 
-We were not ROS2 experts—intentionally. Our prompts were high-level and sometimes imprecise. The agent had to translate vague instructions into working ROS2 code and report back.
+We were not ROS2 experts, intentionally. Our prompts were high-level and sometimes imprecise. The agent had to translate vague instructions into working ROS2 code and report back.
 
 ## 2. The Setup
 
@@ -52,11 +52,9 @@ We deliberately chose the Raspberry Pi as the target platform because:
 - It requires proper thermal management (no throttling)
 - It demonstrates the agent's ability to handle real-world constraints
 
-The Pi ran ROS2 Kilted (the ROS2 distribution), and the agent was configured to work within this specific environment.
-
 #### 1. Raspberry Pi + Ubuntu + OpenClaw + Telegram + GitHub
 
-We used Raspberry Pi 5 with 4 GB of RAM for our experiments.
+We used Raspberry Pi 4 with 4 GB of RAM for our experiments.
 Both OpenClaw agent and the ROS2 applications were running on the device.
 
 We followed [this guide](https://ajfisher.me/2026/02/03/openclaw-raspberrypi-howto/) to run OpenClaw on Ubuntu on Raspberry Pi.
