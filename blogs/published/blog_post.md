@@ -1,18 +1,21 @@
-# From High-Level Directives to Running ROS2 Applications: Our Journey with Agentic Robotics Development
-
-**A comprehensive case study on using AI agents for hardware-close robotics application development**
-
-**Authors:** Noah Ploch & Jakub Skupien  
+# Giving OpenClaw the Keys to Robotics: Agentic ROS on a Raspberry Pi
+ 
 **Date:** February 2026  
-**Project Repository:** [openclaw/openclaw-ros](https://github.com/openclaw/openclaw-ros)
+**Project Repository:** [openclaw/openclaw-ros](https://github.com/rosieorchestrate/openclaw-ros)
 
 ## TL;DR
-We've explored hardware-related software development with OpenClaw on a Raspberry Pi 4 and compared performance of various LLM models. The models were tasked with building a simple ROS2 app using hardware connected to the Pi. Ultimately, OpenClaw proved to be a powerhouse for building these applications, showing huge potential for industrial maintenance and monitoring. While Claude Opus 4.6 performed the best overall, GLM5 delivered impressive value at just a quarter of the cost.
+- We tested whether OpenClaw could autonomously build and maintain real ROS applications on a Raspberry Pi 4 using ROS 2 from high-level goals only.
+
+- The agent successfully developed, deployed, and monitored hardware-connected systems (GPIO + camera-based person detection) taking advantage of its full system access.
+
+- Claude Opus 4.6 delivered the strongest end-to-end performance; GLM-5 offered the best price-performance ratio.
+
+- With the right guardrails and constraints, agentic systems like OpenClaw show strong potential for robotics monitoring and on-device maintenance use cases.
 
 ## Table of Contents
 
-1. [The Idea: Agentic Robotics Development](#1-the-idea-agentic-robotics-development)
-2. [The Setup](#2-the-setup)
+1. [The Idea: Agentic Development in Robotics and Automation](#1-the-idea-agentic-robotics-development)
+2. [Getting Started: The Setup](#2-getting-started-the-setup)
 3. [Educating OpenClaw: Skills and Contracts](#3-educating-openclaw-skills-and-contracts)
 4. [The Learning Journey: From Blinking LEDs to Autonomous Vision](#4-the-learning-journey-from-blinking-leds-to-autonomous-vision)
 5. [Achieving AI-Powered Camera Surveillance with different models](#5-achieving-ai-powered-camera-surveillance-with-different-models)
@@ -20,29 +23,28 @@ We've explored hardware-related software development with OpenClaw on a Raspberr
 
 ---
 
-## 1. The Idea: Agentic Robotics Development
+## 1. The Idea: Agentic Development in Robotics and Automation
 
-An AI agent with full system access—able to execute commands, read/write files, and interact with hardware—seems like a natural fit for robotics development. [OpenClaw](https://github.com/openclaw/openclaw) gave us exactly that.
+If an agent can execute shell commands, modify files, install dependencies, and interact with physical interfaces, it can move beyond generating code and start building real systems. [OpenClaw](https://github.com/openclaw/openclaw) gave us exactly that capability: an agent operating directly on the host machine, with the ability to control both software and hardware.
 
-We wanted to test a simple idea:
+We set out to test a simple idea:
 
-> Can we give an AI agent a high-level goal and have it produce a working ROS2 application without step-by-step instructions?
+> What happens if you give OpenClaw full system access and only tell it what the robot should achieve?
 
-Instead of writing detailed specifications, we issued abstract directives like:
+To make this concrete, we chose [ROS 2](https://docs.ros.org/en/kilted/index.html) , the industry standard framework for robotics applications — and forced the agent to work within it. But instead of writing detailed specifications (as you would with tools like Claude Code or Codex), we gave high-level objectives and expected the agent to behave like an autonomous ROS developer and maintainer. Our directives were intentionally abstract:
 
-- “Blink the LED on GPIO port 16 with frequency of 1 Hz using ROS2”
-- “Build a ROS2 surveillance system based on footage from the attached Raspberry Pi camera, which will send us an email once a person is detected.”
-- “Monitor system health and send us a message when abnormal behavior is detected.”
+- “Build a ROS surveillance system using the attached Raspberry Pi camera and send an email when a person is detected.”
+- “Monitor system health and notify us when abnormal behavior occurs.”
 
-The agent (OpenClaw) had full system access: it could execute shell commands, edit files, run ROS2 tools, test in simulation, and manage version control. Its job was to:
+The agent (OpenClaw) had full system access: it could execute shell commands, edit files, run ROS tools, test in simulation, and manage version control. Its job was to:
 
-- Design the ROS2 node architecture  
+- Design a ROS node architecture  
 - Implement the required functionality  
-- Test before deploying to hardware  
+- Run tests and deploy to hardware  
 - Monitor and report system status  
 - Keep the project structured and reproducible  
 
-We were not ROS2 experts, intentionally. Our prompts were high-level and sometimes imprecise. The agent had to translate vague instructions into working ROS2 code and report back.
+We were not ROS experts, intentionally. Our prompts were high-level and sometimes imprecise. The agent had to translate vague goals into structured, working ROS systems and close the loop by reporting results.
 
 ## 2. Getting Started: The Setup
 
@@ -55,10 +57,10 @@ We deliberately chose the Raspberry Pi as the target platform because:
 #### 1. Raspberry Pi + Ubuntu + OpenClaw + Telegram + GitHub
 
 We used Raspberry Pi 4 with 4 GB of RAM for our experiments.
-Both OpenClaw agent and the ROS2 applications were running on the device.
+Both OpenClaw agent and the ROS applications were running on the device.
 
 We followed [this guide](https://ajfisher.me/2026/02/03/openclaw-raspberrypi-howto/) to run OpenClaw on Ubuntu on Raspberry Pi.
-We chose Ubuntu over Raspbian OS due to its native support of ROS2.
+We chose Ubuntu over Raspbian OS due to its native support of ROS.
 
 We've integrated OpenClaw with Telegram and added it to the group with both of us.
 You can follow [this guide](https://platform.minimax.io/docs/solutions/moltbot) to set up the integration.
@@ -66,9 +68,9 @@ Note, that if you want to add the OpenClaw bot to a group, you need to give it g
 
 We created an account on GitHub for the agent and added one repository as agent workspace and one for this project. Set up an SSH key for the agent and it is ready to commit to both repos.
 
-#### 2. ROS2 
+#### 2. ROS 2 
 
-We've installed ROS2 Kilted base version on Raspberry Pi following the official [ROS2 guide](https://docs.ros.org/en/kilted/Installation/Ubuntu-Install-Debs.html)
+We've installed ROS 2 Kilted base version on Raspberry Pi following the official [ROS 2 guide](https://docs.ros.org/en/kilted/Installation/Ubuntu-Install-Debs.html)
 
 
 #### 3. Hardware
@@ -87,8 +89,8 @@ We developed a suite of specialized skills that guided the agent's behavior:
 
 | Skill | Purpose |
 |-------|---------|
-| **ros2-discovery** | Discover ROS2 topics, nodes, and packages; verify environment health |
-| **ros2-generation-pro** | Generate ROS2 application code with proper structure |
+| **ros2-discovery** | Discover ROS topics, nodes, and packages; verify environment health |
+| **ros2-generation-pro** | Generate ROS application code with proper structure |
 | **ros2-simulation** | Test applications in simulation before hardware deployment |
 | **ros2-diag-health** | Monitor system health (CPU, RAM, temperature) |
 | **ros2-contract-guard** | Enforce development contracts and prevent unsafe actions |
@@ -109,15 +111,15 @@ The agent was instructed to follow strict contracts:
 
 ## 4. The Learning Journey: From Blinking LEDs to Autonomous Vision
 
-This journey wasn't just about building a ROS2 application with AI, it was about teaching an agent to think like a robotics engineer and produce structured code and output to high-level inputs.
+This journey wasn't just about building a ROS application with AI, it was about teaching an agent to think like a robotics engineer and produce structured code and output to high-level inputs.
 
-### Our "Hello World" with ROS2
+### Our "Hello World" with ROS
 
 We began with basic GPIO control. The goal was simple: A controller node publishes to a topic, which is subscribed by an LED node that blinks an LED based on the message. 
 
 As you would expect from hardware projects, the agent struggled with the setup to control the LED. Due to the less usual setup of Ubuntu on Pi, more guidance was necessary to get the agent to use the right libraries and permissions. 
 
-Eventually, we got the LED to blink. It was time for our "Hello World" with ROS2. Note how our prompt to create this application was still quite specific on the implementation architecture. Model used was Gemini-3-Flash, and the agent successfully created the ROS2 application:
+Eventually, we got the LED to blink. It was time for our "Hello World" with ROS. Note how our prompt to create this application was still quite specific on the implementation architecture. Model used was Gemini-3-Flash, and the agent successfully created the ROS application:
 
 > **Prompt:** The goal is to have a talker that sends 'hello [timestamp]' messages randomly every 0.5 to 3 seconds and a listener that subscribes to this talker, logs into a file in the Project folder "[timestamp] message", and lets the LED blink for 0.3 seconds. Think of the components you will need and use your skills to develop this project. Once you are done creating, provide a detailed log on the changes you have made.
 
@@ -128,7 +130,7 @@ We then asked the agent to add a node that outputs topic messages to the termina
 
 ### The Big Goal: AI-Powered Camera Surveillance
 
-With the basics covered, we moved to a real-world use case: a ROS2 Camera Surveillance System with person detection. Upon detection of a person, an email is sent with the camera image attached. We envisioned an architecture with the following nodes:
+With the basics covered, we moved to a real-world use case: a ROS Camera Surveillance System with person detection. Upon detection of a person, an email is sent with the camera image attached. We envisioned an architecture with the following nodes:
 
 - `camera_ros`: Captures images from the Raspberry Pi camera module
 - `detector_node`: Runs some on-device person detection (MobileNet SSD, YoloV5, etc.)
@@ -139,7 +141,7 @@ We started with Gemini-3-Flash, went step by step and described which libraries 
   2. Object detection (same openclaw session as camera operation): hint to use Yolo models. Log objects detected in a file and images to a folder of choice.
 
 Camera operation and detection worked well and the agent was able to log detected objects in a file. Then, we went all the way and asked the agent to implement the full application:
->**Prompt:** now lets dive into a new project you should develop in a new folder "06-camera-surveillance": camera-based surveillance based on yolo models that can run on a raspberry pi. Of course built with ROS2. The image processing and detection must happen locally. upon detection of a person, the application sends an email to ***@gmail.com with the corresponding frame. first, the email sending node should mock the email sending by outputting to the terminal that a detection has happened and output the email content to a log folder. The detection frequency should be once per second to avoid hardware overload. Make sure the application is also testable by me and provide the spin up procedure. Advance step by step, document progress, and adhere to our guidelines and contracts. The project folder should be self-containing.
+>**Prompt:** now lets dive into a new project you should develop in a new folder "06-camera-surveillance": camera-based surveillance based on yolo models that can run on a raspberry pi. Of course built with ROS. The image processing and detection must happen locally. upon detection of a person, the application sends an email to ***@gmail.com with the corresponding frame. first, the email sending node should mock the email sending by outputting to the terminal that a detection has happened and output the email content to a log folder. The detection frequency should be once per second to avoid hardware overload. Make sure the application is also testable by me and provide the spin up procedure. Advance step by step, document progress, and adhere to our guidelines and contracts. The project folder should be self-containing.
 
 Note how the agent adheres to the implementation guidelines and contracts, implementing the application step by step and providing detailed logs of its progress. 
 | ![First run full app part 1](../assets/first_run_full_app_tel_p1.png) | ![First run full app part 2](../assets/first_run_full_app_tel_p2.png) |
@@ -152,12 +154,12 @@ Notably, when YoloV8n deployment failed, the agent autonomously switched to Medi
 | :---: | :---: |
 
 
-**Some key learnings from this phase:**
+**Key learnings**
 - The agent's ability to follow development steps and test via local code execution impressed us. At its best, it behaved like a seasoned hardware engineer.
-- Session context: While the context was useful when working on the same project, it turned out to be a nightmare when we had several projects in the same session (without using /new command from openclaw). Gemini-3-Flash started mixing up the projects, e.g. logging into other projects, using custom nodes from other projects instead of recreating them, etc. At some point, we ran into a state where the ROS2 application could not be deployed anymore due to wrong launch configurations and the agent started to create wild deployment strategies for the project, making the folder completely useless.
+- Session context: While the context was useful when working on the same project, it turned out to be a nightmare when we had several projects in the same session (without using /new command from openclaw). Gemini-3-Flash started mixing up the projects, e.g. logging into other projects, using custom nodes from other projects instead of recreating them, etc. At some point, we ran into a state where the ROS application could not be deployed anymore due to wrong launch configurations and the agent started to create wild deployment strategies for the project, making the folder completely useless.
 - Gemini-3-Flash has not enough reasoning capabilities to drive such projects end-to-end. While it became good at testing the current status and asking for feedback, it usually forgot commiting to git, updating decision documentation, etc. Also, the quality of the tests was varied, requiring detailed questioning and retesting before we could have a good picture of the current status.
 
-Thus, we decided to test the development and monitoring of the same ROS2 app with different models.
+Thus, we decided to test the development and monitoring of the same ROS app with different models.
 
 
 ## 5. Achieving AI-Powered Camera Surveillance with different models
@@ -183,9 +185,9 @@ Does the agent:
 
 ### Key Takeaways
 
-**Claude (The Architect):** Claude was the only model that felt "conscious" of our guidelines. It didn't just write code; it checked the environment first. If a system library was missing, it installed it. It produced well-organized code, communicated proactively its decisions and its reports included results of real tests. It was the only one that did not need to be pointed at `camera_ros` package to develop the camera node.
+**Claude (The Architect):** Claude was the only model that felt "conscious" of our guidelines. It didn't just write code; it checked the environment first. If a system library was missing, it installed it. It produced well-organized code, communicated proactively its decisions and its reports included results of real tests. It was the only one that did not need to be pointed at `camera_ros` package to develop the camera node. However, it implemented the app all the way without asking us for feedback on its decisions.
 
-**GLM5 (The Pragmatic):** For a low price, it developed and deployed the full application, capturing real images in its testing pipeline. It interpreted our intentions correctly and was able to iterate on its progress, e.g. when encountering errors. For instance, it tried to bypass ROS2 initially, opting for plain Python due to an apparent build error with ROS2. Upon redirection, we were impressed by its engineering capabilities, which were reaching Claude for a fraction of the price. It occasionally forgot to report back and hung on long-horizon testing.
+**GLM5 (The Pragmatic):** For a low price, it developed and deployed the full application, capturing real images in its testing pipeline. It interpreted our intentions correctly and was able to iterate on its progress, e.g. when encountering errors. For instance, it tried to bypass ROS initially, opting for plain Python due to an apparent build error with ROS. Upon redirection, we were impressed by its engineering capabilities, which were reaching Claude for a fraction of the price. It occasionally forgot to report back and hung on long-horizon testing.
 
 **Guidance for Flash and Kimi:** These less powerful models performed similarly well with clear instructions, but struggled with the interpretation of high-level prompts that required to understand both the goal and the available tools without the user pointing it out. Especially Kimi struggled with hardware debugging and discovery and did not understand to combine the user intent with the "system context".
 
@@ -199,7 +201,7 @@ Claude running the application for the first time:
 
 ## 6. Conclusion: A Paradigm Shift for Industrial SRE
 
-Our experiment demonstrates that **modern AI agents such as OpenClaw can successfully develop applications on hardware** when provided with the proper skills, constraints and system access. Rather than limiting the agent, the strict engineering patterns of the ROS2 framework provided the exact structure necessary for autonomous operation. It is remarkable that a standard Raspberry Pi running OpenClaw can effectively host and "educate" a ROS2 specialist by means of a Telegram group chat.
+Our experiment demonstrates that **modern AI agents such as OpenClaw can successfully develop applications on hardware** when provided with the proper skills, constraints and system access. Rather than limiting the agent, the strict engineering patterns of the ROS framework provided the exact structure necessary for autonomous operation. It is remarkable that a standard Raspberry Pi running OpenClaw can effectively host and "educate" a ROS specialist by means of a Telegram group chat.
 
 While Claude Opus 4.6 emerged as the most robust architect for complex tasks, the impressive efficiency of GLM5 proves that agentic SRE is becoming economically viable for less critical, high-volume monitoring.
 
@@ -211,7 +213,7 @@ This marks a shift: from passive monitoring software to an SRE running directly 
 
 - **Sandboxed Evolution:** When using a strict "shadow environment" protocol (developing in simulation, validating in a sandbox, and only then deploying to production) the agent creates a self-improving loop that minimizes risk.
 
-Setting up the right environment (guardrails, skills, permissions, interaction protocols) remains a significant hurdle. But as model capabilities increase and token prices fall, the potential for closed-loop agentic systems in hardware environments is undeniable. Next up: Expand the capacity of OpenClaw to maintain and interface with increasingly complex ROS2 applications.
+Setting up the right environment (guardrails, skills, permissions, interaction protocols) remains a significant hurdle. But as model capabilities increase and token prices fall, the potential for closed-loop agentic systems in hardware environments is undeniable. Next up: Expand the capacity of OpenClaw to maintain and interface with increasingly complex ROS applications.
 
 ---
 
